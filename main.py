@@ -2,7 +2,7 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
 from tkinter import font as tkfont
-from chatbot import open_chatbot
+from chatbot.chatbot import open_chatbot
 from alert_popup import show_security_popup
 from dataset.scan_file import get_activities, STATUS_COLORS
 
@@ -126,13 +126,16 @@ class ModernAISec:
 
         activities = get_activities()  # now works correctly
 
-        for time, filename, status, is_danger in activities:
-            self.create_activity_item(self.left_scroll_frame,
-                                    time,
-                                    filename,
-                                    status,
-                                    is_danger)
-            
+        # The *_ at the end catches any extra values you aren't using yet
+        for time, filename, status, is_danger, file_path, *_ in get_activities():
+            self.create_activity_item(
+                self.left_scroll_frame,
+                time,
+                filename,
+                status,
+                is_danger,
+                file_path
+            )
         # ================= RIGHT SECTION =================
         right_pane = tk.Frame(grid, bg="#FDFDFD")
         right_pane.pack(side="left", fill="both", expand=True)
@@ -414,7 +417,8 @@ class ModernAISec:
         self.tip_counter.configure(text=f"{self.tip_index + 1} of {len(self.tips)}")
 
     # ================= Block Recent Activity =================
-    def create_activity_item(self, parent, time, title, status, is_danger):
+# 1. Added file_path to the argument list
+    def create_activity_item(self, parent, time, title, status, is_danger, file_path):
 
         # ✅ Use STATUS_COLORS instead of is_danger
         badge_bg, status_color = STATUS_COLORS.get(status, ("#F5F5F5", "#555555"))
@@ -433,14 +437,14 @@ class ModernAISec:
         time_label = ctk.CTkLabel(
             item,
             text=time,
-            font=("Arial", 10),
-            text_color="#6E6E73"
+            font=("Arial", 11),
+            text_color="#8E8E93"
         )
-        time_label.pack(anchor="w", padx=15, pady=(10, 0))
+        time_label.pack(anchor="w", padx=15, pady=(0, 0))
 
         # Middle row container
         row = ctk.CTkFrame(item, fg_color="transparent")
-        row.pack(fill="x", padx=15, pady=(5, 10))
+        row.pack(fill="x", padx=15, pady=(2, 0)) # Reduced bottom pady slightly
 
         # Title
         title_label = ctk.CTkLabel(
@@ -450,19 +454,32 @@ class ModernAISec:
         )
         title_label.pack(side="left")
 
+        # --- NEW: File Path Label ---
+        # Placed right under the title inside the main 'item' box
+        path_label = ctk.CTkLabel(
+            item,
+            text=file_path,
+            font=("Arial", 10),
+            text_color="#0E0E0F",
+            wraplength=300,  # Prevents long paths from pushing the badge away
+            justify="left"
+        )
+        path_label.pack(anchor="w", padx=15, pady=(0, 5))
+        # ----------------------------
+
         # Badge
         badge = ctk.CTkFrame(
             item,
             corner_radius=8,
-            fg_color=badge_bg   # ✅ from STATUS_COLORS
+            fg_color=badge_bg
         )
-        badge.place(relx=1.0, x=-15, y=10, anchor="ne")
+        badge.place(relx=1.0, x=-15, y=5, anchor="ne")
 
         status_label = ctk.CTkLabel(
             badge,
             text=status.upper(),
             font=("Arial", 10, "bold"),
-            text_color=status_color,  # ✅ from STATUS_COLORS
+            text_color=status_color,
             height=15
         )
         status_label.pack(padx=8, pady=3)

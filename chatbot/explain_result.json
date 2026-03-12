@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "event_time": "2:34 PM Today",
+      "file_name": "invoice_2024.exe",
+      "status": "Quarantined",
+
+      "threat_information": {
+        "attack_type": "Malicious Executable",
+        "severity": "High"
+      },
+
+      "explanation": {
+        "simple_summary": "A potentially malicious executable file named invoice_2024.exe was detected and automatically quarantined by the system.",
+
+        "how_the_attack_works": "Attackers often disguise malware as legitimate files such as invoices. When the file is executed, malicious code may run in the background.",
+
+        "why_it_is_dangerous": "Malicious executable files can install malware, steal sensitive data, or allow attackers to remotely control the system."
+      },
+
+      "prevention_guidance": {
+        "recommended_actions": [
+          "Avoid opening executable files from unknown email attachments.",
+          "Download files only from trusted sources.",
+          "Scan files using antivirus software before running them."
+        ]
+      }
+    },
+
+    {
+      "event_time": "1:15 PM Today",
+      "file_name": "report.docx",
+      "status": "Suspicious",
+
+      "threat_information": {
+        "attack_type": "Potential Malicious Document",
+        "severity": "Medium"
+      },
+
+      "explanation": {
+        "simple_summary": "The document report.docx was flagged as suspicious because it may contain embedded malicious scripts.",
+
+        "how_the_attack_works": "Attackers sometimes embed malicious macros or scripts inside documents. These scripts may execute when the file is opened.",
+
+        "why_it_is_dangerous": "If malicious macros run, attackers may execute commands or download malware onto the system."
+      },
+
+      "prevention_guidance": {
+        "recommended_actions": [
+          "Do not enable macros in documents from unknown sources.",
+          "Verify the sender before opening attachments.",
+          "Scan the document with security software."
+        ]
+      }
+    },
+
+    {
+      "event_time": "11:42 AM Today",
+      "file_name": "update_patch.msi",
+      "status": "Low",
+
+      "threat_information": {
+        "attack_type": "Software Installer",
+        "severity": "Low"
+      },
+
+      "explanation": {
+        "simple_summary": "The file update_patch.msi appears to be a software installer and is currently considered low risk.",
+
+        "how_the_attack_works": "MSI files are commonly used to install software updates or applications on Windows systems.",
+
+        "why_it_is_dangerous": "Although this installer is marked low risk, attackers sometimes disguise malware as software updates."
+      },
+
+      "prevention_guidance": {
+        "recommended_actions": [
+          "Download updates only from official sources.",
+          "Verify the software publisher before installing.",
+          "Avoid installing unknown programs."
+        ]
+      }
+    }
+  ]
+}

@@ -7,31 +7,32 @@ import time
 
 ctk.set_appearance_mode("light")
 
+
 # ── Palette ──────────────────────────────────────────────────────────────────
-BG        = "#F7F8FC"
-WHITE     = "#FFFFFF"
-BORDER    = "#E4E7EF"
+BG        = "#F8F9FA"       # card_bg
+WHITE     = "#FFFFFF"       # bg
+BORDER    = "#Ffffff"       # border_red
 NAV_BG    = "#1A2340"
 NAV_SEL   = "#2A3558"
 NAV_TEXT  = "#A8B4CC"
 NAV_ACT   = "#FFFFFF"
 BLUE      = "#2563EB"
 BLUE_L    = "#EFF4FF"
-RED       = "#EF4444"
-RED_L     = "#FEF2F2"
+RED       = "#FF5252"       # accent_red ✅ matched
+RED_L     = "#ffffff"       # light_red  ✅ matched
 ORANGE    = "#F59E0B"
 ORANGE_L  = "#FFFBEB"
 GREEN     = "#10B981"
 GREEN_L   = "#ECFDF5"
-TEXT      = "#0F172A"
-TEXT2     = "#64748B"
+TEXT      = "#1A1A1B"       # text_main  ✅ matched
+TEXT2     = "#6E6E73"       # text_sub   ✅ matched
 TEXT3     = "#94A3B8"
 
 FONT_H1   = ("Georgia", 18, "bold")
 FONT_H2   = ("Georgia", 13, "bold")
 FONT_H3   = ("Georgia", 11, "bold")
 FONT_BODY = ("Helvetica", 11)
-FONT_SM   = ("Helvetica", 10)
+FONT_SM   = ("Helvetica", 12)
 FONT_XS   = ("Helvetica", 9)
 
 # ── Mock Data ─────────────────────────────────────────────────────────────────
@@ -39,10 +40,10 @@ DEVICES = [
     {"name": "WS-Prod-01",    "ip": "192.168.1.10",  "os": "Windows 11",  "user": "alice",   "status": "Clean",     "contained": False, "last_seen": "Just now"},
     {"name": "Stewart-PC",    "ip": "192.168.1.11",  "os": "Windows 10",  "user": "stewart", "status": "Threat",    "contained": True,  "last_seen": "2 min ago"},
     {"name": "SharePoint01",  "ip": "192.168.1.20",  "os": "Windows Server 2022", "user": "admin", "status": "Warning", "contained": False, "last_seen": "5 min ago"},
-    {"name": "ubuntu-dev",    "ip": "192.168.1.30",  "os": "Ubuntu 22.04","user": "devteam", "status": "Clean",     "contained": False, "last_seen": "1 min ago"},
+    {"name": "ubuntu-dev",    "ip": "192.168.1.30",  "os": "Windows 11","user": "devteam", "status": "Clean",     "contained": False, "last_seen": "1 min ago"},
     {"name": "Jayne-Laptop",  "ip": "192.168.1.12",  "os": "Windows 11",  "user": "jayne",   "status": "Clean",     "contained": False, "last_seen": "3 min ago"},
-    {"name": "Tomcat-Server", "ip": "192.168.1.40",  "os": "CentOS 8",    "user": "sysadmin","status": "Warning",   "contained": False, "last_seen": "8 min ago"},
-    {"name": "Cooper-MBP",    "ip": "192.168.1.13",  "os": "macOS 14",    "user": "cooper",  "status": "Clean",     "contained": False, "last_seen": "Just now"},
+    {"name": "Tomcat-Server", "ip": "192.168.1.40",  "os": "Windows 11",    "user": "sysadmin","status": "Warning",   "contained": False, "last_seen": "8 min ago"},
+    {"name": "Cooper-MBP",    "ip": "192.168.1.13",  "os": "Windows 11",    "user": "cooper",  "status": "Clean",     "contained": False, "last_seen": "Just now"},
     {"name": "Dylan-PC",      "ip": "192.168.1.14",  "os": "Windows 10",  "user": "dylan",   "status": "Threat",    "contained": False, "last_seen": "12 min ago"},
 ]
 
@@ -57,13 +58,14 @@ ACTIVITIES = [
     ("ransomware.exe",     "Dylan-PC",     "Quarantined", True),
 ]
 
+# ── Status Colors (text only, no background) ─────────────────────────────────
 STATUS_COLORS = {
-    "Clean":       (GREEN_L,  GREEN),
-    "Threat":      (RED_L,    RED),
-    "Warning":     (ORANGE_L, ORANGE),
-    "Quarantined": (RED_L,    RED),
-    "Suspicious":  (ORANGE_L, ORANGE),
-    "Low":         (BLUE_L,   BLUE),
+    "Clean":       ("#F5F5F5", GREEN),
+    "Threat":      ("#F5F5F5", RED),
+    "Warning":     ("#F5F5F5", ORANGE),
+    "Quarantined": ("#F5F5F5", RED),
+    "Suspicious":  ("#F5F5F5", ORANGE),
+    "Low":         ("#F5F5F5", BLUE),
 }
 
 OS_ICONS = {
@@ -122,7 +124,7 @@ class SMEDashboard:
         tk.Frame(self.sidebar, bg="#2A3558", height=1).pack(fill="x", padx=15, pady=(0, 12))
 
         # Search
-        search_frame = ctk.CTkFrame(self.sidebar, fg_color="#252F4A",
+        search_frame = ctk.CTkFrame(self.sidebar, fg_color="#e0e0e0",
                                     corner_radius=8)
         search_frame.pack(fill="x", padx=15, pady=(0, 16))
 
@@ -174,6 +176,7 @@ class SMEDashboard:
     def _render_device_list(self, devices):
         for w in self.device_list_frame.winfo_children():
             w.destroy()
+        self.device_buttons = {}
 
         for dev in devices:
             bg_c, fg_c = STATUS_COLORS.get(dev["status"], (BLUE_L, BLUE))
@@ -186,7 +189,6 @@ class SMEDashboard:
             inner = tk.Frame(row, bg=row_bg)
             inner.pack(fill="x", padx=10, pady=8)
 
-            # Icon + name
             icon = get_os_icon(dev["os"])
             left = tk.Frame(inner, bg=row_bg)
             left.pack(side="left", fill="x", expand=True)
@@ -202,15 +204,20 @@ class SMEDashboard:
             tk.Label(left, text=dev["ip"], font=FONT_XS,
                      bg=row_bg, fg=NAV_TEXT).pack(anchor="w")
 
-            # Status badge
-            badge = tk.Label(inner, text=dev["status"],
-                             font=("Helvetica", 8, "bold"),
-                             bg=fg_c, fg=WHITE,
-                             padx=6, pady=2)
-            badge.pack(side="right")
+            badge_frame = ctk.CTkFrame(inner, fg_color="transparent",
+                                       corner_radius=6, height=22, width=70)
+            badge_frame.pack_propagate(False)
+            badge_frame.pack(side="right", padx=(10, 5))
 
-            # Bind click
-            for w in [row, inner, left, name_row, badge]:
+            ctk.CTkLabel(badge_frame, text=dev["status"].upper(),
+                         font=("Helvetica", 9, "bold"),
+                         text_color=fg_c,
+                         fg_color="transparent").pack(expand=True)
+
+            # ✅ Store row reference
+            self.device_buttons[dev["name"]] = {"row": row}
+
+            for w in [row, inner, left, name_row, badge_frame]:
                 w.bind("<Button-1>", lambda e, d=dev: self._select_device(d))
 
             self.device_buttons[dev["name"]] = row
@@ -285,9 +292,10 @@ class SMEDashboard:
     def _add_feed_item(self, filename, device, status):
         bg_c, fg_c = STATUS_COLORS.get(status, (BLUE_L, BLUE))
 
+        # Main Row Container
         row = ctk.CTkFrame(self.feed_frame, fg_color="#FAFAFA",
-                           corner_radius=8, border_width=1,
-                           border_color=BORDER)
+                        corner_radius=8, border_width=1,
+                        border_color=BORDER)
         row.pack(fill="x", pady=3, padx=8)
 
         inner = tk.Frame(row, bg="#FAFAFA")
@@ -295,34 +303,57 @@ class SMEDashboard:
 
         # Icon circle
         icon_f = ctk.CTkFrame(inner, fg_color=bg_c,
-                              corner_radius=18, width=34, height=34)
+                            corner_radius=18, width=34, height=34)
         icon_f.pack(side="left")
         icon_f.pack_propagate(False)
+        
         ctk.CTkLabel(icon_f, text="🗂", font=("Arial", 14),
-                     fg_color="transparent",
-                     text_color=fg_c).pack(expand=True)
+                    fg_color="transparent",
+                    text_color=fg_c).pack(expand=True)
 
-        # Text
+        # Text Section (Filename and Device info)
         txt = tk.Frame(inner, bg="#FAFAFA")
         txt.pack(side="left", padx=(10, 0), fill="x", expand=True)
+        
         tk.Label(txt, text=filename, font=("Helvetica", 10, "bold"),
-                 bg="#FAFAFA", fg=TEXT).pack(anchor="w")
+                bg="#FAFAFA", fg=TEXT).pack(anchor="w")
+                
         tk.Label(txt, text=f"📍 {device}  •  {datetime.now().strftime('%H:%M')}",
-                 font=FONT_XS, bg="#FAFAFA", fg=TEXT3).pack(anchor="w")
+                font=FONT_XS, bg="#FAFAFA", fg=TEXT3).pack(anchor="w")
 
-        # Badge
-        tk.Label(inner, text=status,
-                 font=("Helvetica", 8, "bold"),
-                 bg=fg_c, fg=WHITE,
-                 padx=7, pady=3).pack(side="right")
-
+        # --- UPDATED BADGE SECTION ---
+        # Using CTkLabel for the corner_radius
+        ctk.CTkLabel(
+            inner,
+            text=status.upper(),
+            font=("Helvetica", 9, "bold"),
+            text_color=fg_c,            # ✅ colored text only
+            fg_color="#F5F5F5",
+            corner_radius=6,
+            height=22,
+            padx=8
+        ).pack(side="right")
     # ── Device Info Panel ─────────────────────────────────────────────────────
     def _select_device(self, device):
         self.selected_device = device
+        self._update_sidebar_highlight()
         for w in self.info_panel.winfo_children():
             w.destroy()
         self._render_device_info(device)
-        self._render_device_list(DEVICES)
+
+    def _update_sidebar_highlight(self):
+        for dev_name, row in self.device_buttons.items():
+            is_sel = self.selected_device and self.selected_device["name"] == dev_name
+            row_bg = NAV_SEL if is_sel else NAV_BG
+            self._update_bg_recursive(row, row_bg)
+
+    def _update_bg_recursive(self, widget, bg):
+        try:
+            widget.configure(bg=bg)
+        except:
+            pass
+        for child in widget.winfo_children():
+            self._update_bg_recursive(child, bg)
 
     def _render_device_info(self, dev):
         bg_c, fg_c = STATUS_COLORS.get(dev["status"], (BLUE_L, BLUE))
@@ -340,10 +371,13 @@ class SMEDashboard:
         tk.Label(b_inner, text=f"{icon}  {dev['name']}",
                  font=FONT_H1, bg=bg_c, fg=TEXT).pack(side="left")
 
+
         status_pill = tk.Label(b_inner,
                                text=f"  {dev['status'].upper()}  ",
                                font=("Helvetica", 11, "bold"),
-                               bg=fg_c, fg=WHITE, padx=10, pady=4)
+                               bg=bg_c,        # ✅ matches banner bg
+                               fg=fg_c,        # ✅ colored text only
+                               padx=10, pady=4)
         status_pill.pack(side="right")
 
         tk.Label(b_inner, text=f"Last seen: {dev['last_seen']}",
@@ -434,31 +468,29 @@ class SMEDashboard:
 
         # Quick action buttons
         tk.Label(action_card, text="Quick Actions",
-                 font=("Helvetica", 11, "bold"),
+                 font=("Helvetica", 12, "bold"),
                  bg=WHITE, fg=TEXT).pack(anchor="w", padx=20, pady=(0, 8))
 
-        actions = [
-            ("🔍  Run Full Scan",    BLUE,   "#1D4ED8"),
-            ("🗑  Clear Quarantine", GREEN,  "#059669"),
-            ("⚠️  Flag Device",      ORANGE, "#D97706"),
-        ]
 
-        for label, color, hover in actions:
+        actions = [
+                    ("Deep Behavioral Analysis", "#F0F4FF", "#B1BBD8", BLUE),
+                    ("Clear Quarantine",          "#F0FDF4", "#B1BBD8", GREEN),
+                    ("Mark as Compromised",       "#FFFBEB", "#D97706", ORANGE),
+                ]
+
+        for label, bg_color, text_color, hover in actions:
             ctk.CTkButton(
                 action_card,
                 text=label,
                 font=FONT_SM,
-                fg_color=color,
+                fg_color=bg_color,      # ✅ soft pastel background
                 hover_color=hover,
-                text_color=WHITE,
+                text_color="#0b0000",  # ✅ colored text
                 corner_radius=8,
                 height=34,
                 anchor="w",
                 command=lambda l=label: self._run_action(l, dev)
             ).pack(fill="x", padx=20, pady=3)
-
-        tk.Frame(action_card, bg=BG, height=8).pack()
-
         # ── Threat history ─────────────────────────────────────────────────
         hist_card = ctk.CTkFrame(self.info_panel, fg_color=WHITE,
                                  corner_radius=14, border_width=1,
@@ -480,7 +512,7 @@ class SMEDashboard:
             tk.Label(scroll, text="✅  No threats detected on this device.",
                      font=FONT_BODY, bg=WHITE, fg=GREEN).pack(pady=20)
         else:
-            for fname, dname, status, danger in device_acts:
+            for fname, _, status, danger in device_acts:
                 bg_c2, fg_c2 = STATUS_COLORS.get(status, (BLUE_L, BLUE))
                 r = ctk.CTkFrame(scroll, fg_color="#FAFAFA",
                                  corner_radius=8, border_width=1,
@@ -493,7 +525,8 @@ class SMEDashboard:
                          bg="#FAFAFA", fg=TEXT).pack(side="left")
                 tk.Label(rr, text=status,
                          font=("Helvetica", 8, "bold"),
-                         bg=fg_c2, fg=WHITE,
+                         bg="#FAFAFA",
+                         fg=fg_c2,
                          padx=6, pady=2).pack(side="right")
 
     def _toggle_containment(self, dev, var):

@@ -1,0 +1,1948 @@
+{
+  "controls": [
+    {
+      "id": "AC-1",
+      "name": "Policy and Procedures",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-10",
+      "name": "Concurrent Session Control",
+      "family": "Access Control",
+      "description": "Limit the number of concurrent sessions for each {{ insert: param, ac-10_odp.01 }} to {{ insert: param, ac-10_odp.02 }}."
+    },
+    {
+      "id": "AC-11",
+      "name": "Device Lock",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-12",
+      "name": "Session Termination",
+      "family": "Access Control",
+      "description": "Automatically terminate a user session after {{ insert: param, ac-12_odp }}."
+    },
+    {
+      "id": "AC-13",
+      "name": "Supervision and Review — Access Control",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-14",
+      "name": "Permitted Actions Without Identification or Authentication",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-15",
+      "name": "Automated Marking",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-16",
+      "name": "Security and Privacy Attributes",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-17",
+      "name": "Remote Access",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-18",
+      "name": "Wireless Access",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-19",
+      "name": "Access Control for Mobile Devices",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-2",
+      "name": "Account Management",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-20",
+      "name": "Use of External Systems",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-21",
+      "name": "Information Sharing",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-22",
+      "name": "Publicly Accessible Content",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-23",
+      "name": "Data Mining Protection",
+      "family": "Access Control",
+      "description": "Employ {{ insert: param, ac-23_odp.01 }} for {{ insert: param, ac-23_odp.02 }} to detect and protect against unauthorized data mining."
+    },
+    {
+      "id": "AC-24",
+      "name": "Access Control Decisions",
+      "family": "Access Control",
+      "description": "{{ insert: param, ac-24_odp.01 }} to ensure {{ insert: param, ac-24_odp.02 }} are applied to each access request prior to access enforcement."
+    },
+    {
+      "id": "AC-25",
+      "name": "Reference Monitor",
+      "family": "Access Control",
+      "description": "Implement a reference monitor for {{ insert: param, ac-25_odp }} that is tamperproof, always invoked, and small enough to be subject to analysis and testing, the completeness of which can be assured."
+    },
+    {
+      "id": "AC-3",
+      "name": "Access Enforcement",
+      "family": "Access Control",
+      "description": "Enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies."
+    },
+    {
+      "id": "AC-4",
+      "name": "Information Flow Enforcement",
+      "family": "Access Control",
+      "description": "Enforce approved authorizations for controlling the flow of information within the system and between connected systems based on {{ insert: param, ac-04_odp }}."
+    },
+    {
+      "id": "AC-5",
+      "name": "Separation of Duties",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-6",
+      "name": "Least Privilege",
+      "family": "Access Control",
+      "description": "Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks."
+    },
+    {
+      "id": "AC-7",
+      "name": "Unsuccessful Logon Attempts",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-8",
+      "name": "System Use Notification",
+      "family": "Access Control",
+      "description": ""
+    },
+    {
+      "id": "AC-9",
+      "name": "Previous Logon Notification",
+      "family": "Access Control",
+      "description": "Notify the user, upon successful logon to the system, of the date and time of the last logon."
+    },
+    {
+      "id": "AT-1",
+      "name": "Policy and Procedures",
+      "family": "Awareness and Training",
+      "description": ""
+    },
+    {
+      "id": "AT-2",
+      "name": "Literacy Training and Awareness",
+      "family": "Awareness and Training",
+      "description": ""
+    },
+    {
+      "id": "AT-3",
+      "name": "Role-based Training",
+      "family": "Awareness and Training",
+      "description": ""
+    },
+    {
+      "id": "AT-4",
+      "name": "Training Records",
+      "family": "Awareness and Training",
+      "description": ""
+    },
+    {
+      "id": "AT-5",
+      "name": "Contacts with Security Groups and Associations",
+      "family": "Awareness and Training",
+      "description": ""
+    },
+    {
+      "id": "AT-6",
+      "name": "Training Feedback",
+      "family": "Awareness and Training",
+      "description": "Provide feedback on organizational training results to the following personnel {{ insert: param, at-06_odp.01 }}: {{ insert: param, at-06_odp.02 }}."
+    },
+    {
+      "id": "AU-1",
+      "name": "Policy and Procedures",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-10",
+      "name": "Non-repudiation",
+      "family": "Audit and Accountability",
+      "description": "Provide irrefutable evidence that an individual (or process acting on behalf of an individual) has performed {{ insert: param, au-10_odp }}."
+    },
+    {
+      "id": "AU-11",
+      "name": "Audit Record Retention",
+      "family": "Audit and Accountability",
+      "description": "Retain audit records for {{ insert: param, au-11_odp }} to provide support for after-the-fact investigations of incidents and to meet regulatory and organizational information retention requirements."
+    },
+    {
+      "id": "AU-12",
+      "name": "Audit Record Generation",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-13",
+      "name": "Monitoring for Information Disclosure",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-14",
+      "name": "Session Audit",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-15",
+      "name": "Alternate Audit Logging Capability",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-16",
+      "name": "Cross-organizational Audit Logging",
+      "family": "Audit and Accountability",
+      "description": "Employ {{ insert: param, au-16_odp.01 }} for coordinating {{ insert: param, au-16_odp.02 }} among external organizations when audit information is transmitted across organizational boundaries."
+    },
+    {
+      "id": "AU-2",
+      "name": "Event Logging",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-3",
+      "name": "Content of Audit Records",
+      "family": "Audit and Accountability",
+      "description": "Ensure that audit records contain information that establishes the following:"
+    },
+    {
+      "id": "AU-4",
+      "name": "Audit Log Storage Capacity",
+      "family": "Audit and Accountability",
+      "description": "Allocate audit log storage capacity to accommodate {{ insert: param, au-04_odp }}."
+    },
+    {
+      "id": "AU-5",
+      "name": "Response to Audit Logging Process Failures",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-6",
+      "name": "Audit Record Review, Analysis, and Reporting",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-7",
+      "name": "Audit Record Reduction and Report Generation",
+      "family": "Audit and Accountability",
+      "description": "Provide and implement an audit record reduction and report generation capability that:"
+    },
+    {
+      "id": "AU-8",
+      "name": "Time Stamps",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "AU-9",
+      "name": "Protection of Audit Information",
+      "family": "Audit and Accountability",
+      "description": ""
+    },
+    {
+      "id": "CA-1",
+      "name": "Policy and Procedures",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CA-2",
+      "name": "Control Assessments",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CA-3",
+      "name": "Information Exchange",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CA-4",
+      "name": "Security Certification",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CA-5",
+      "name": "Plan of Action and Milestones",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CA-6",
+      "name": "Authorization",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CA-7",
+      "name": "Continuous Monitoring",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": "Develop a system-level continuous monitoring strategy and implement continuous monitoring in accordance with the organization-level continuous monitoring strategy that includes:"
+    },
+    {
+      "id": "CA-8",
+      "name": "Penetration Testing",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": "Conduct penetration testing {{ insert: param, ca-08_odp.01 }} on {{ insert: param, ca-08_odp.02 }}."
+    },
+    {
+      "id": "CA-9",
+      "name": "Internal System Connections",
+      "family": "Assessment, Authorization, and Monitoring",
+      "description": ""
+    },
+    {
+      "id": "CM-1",
+      "name": "Policy and Procedures",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-10",
+      "name": "Software Usage Restrictions",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-11",
+      "name": "User-installed Software",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-12",
+      "name": "Information Location",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-13",
+      "name": "Data Action Mapping",
+      "family": "Configuration Management",
+      "description": "Develop and document a map of system data actions."
+    },
+    {
+      "id": "CM-14",
+      "name": "Signed Components",
+      "family": "Configuration Management",
+      "description": "Prevent the installation of {{ insert: param, cm-14_prm_1 }} without verification that the component has been digitally signed using a certificate that is recognized and approved by the organization."
+    },
+    {
+      "id": "CM-2",
+      "name": "Baseline Configuration",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-3",
+      "name": "Configuration Change Control",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-4",
+      "name": "Impact Analyses",
+      "family": "Configuration Management",
+      "description": "Analyze changes to the system to determine potential security and privacy impacts prior to change implementation."
+    },
+    {
+      "id": "CM-5",
+      "name": "Access Restrictions for Change",
+      "family": "Configuration Management",
+      "description": "Define, document, approve, and enforce physical and logical access restrictions associated with changes to the system."
+    },
+    {
+      "id": "CM-6",
+      "name": "Configuration Settings",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-7",
+      "name": "Least Functionality",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-8",
+      "name": "System Component Inventory",
+      "family": "Configuration Management",
+      "description": ""
+    },
+    {
+      "id": "CM-9",
+      "name": "Configuration Management Plan",
+      "family": "Configuration Management",
+      "description": "Develop, document, and implement a configuration management plan for the system that:"
+    },
+    {
+      "id": "CP-1",
+      "name": "Policy and Procedures",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-10",
+      "name": "System Recovery and Reconstitution",
+      "family": "Contingency Planning",
+      "description": "Provide for the recovery and reconstitution of the system to a known state within {{ insert: param, cp-10_prm_1 }} after a disruption, compromise, or failure."
+    },
+    {
+      "id": "CP-11",
+      "name": "Alternate Communications Protocols",
+      "family": "Contingency Planning",
+      "description": "Provide the capability to employ {{ insert: param, cp-11_odp }} in support of maintaining continuity of operations."
+    },
+    {
+      "id": "CP-12",
+      "name": "Safe Mode",
+      "family": "Contingency Planning",
+      "description": "When {{ insert: param, cp-12_odp.02 }} are detected, enter a safe mode of operation with {{ insert: param, cp-12_odp.01 }}."
+    },
+    {
+      "id": "CP-13",
+      "name": "Alternative Security Mechanisms",
+      "family": "Contingency Planning",
+      "description": "Employ {{ insert: param, cp-13_odp.01 }} for satisfying {{ insert: param, cp-13_odp.02 }} when the primary means of implementing the security function is unavailable or compromised."
+    },
+    {
+      "id": "CP-2",
+      "name": "Contingency Plan",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-3",
+      "name": "Contingency Training",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-4",
+      "name": "Contingency Plan Testing",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-5",
+      "name": "Contingency Plan Update",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-6",
+      "name": "Alternate Storage Site",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-7",
+      "name": "Alternate Processing Site",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "CP-8",
+      "name": "Telecommunications Services",
+      "family": "Contingency Planning",
+      "description": "Establish alternate telecommunications services, including necessary agreements to permit the resumption of {{ insert: param, cp-08_odp.01 }} for essential mission and business functions within {{ insert: param, cp-08_odp.02 }} when the primary telecommunications capabilities are unavailable at either the primary or alternate processing or storage sites."
+    },
+    {
+      "id": "CP-9",
+      "name": "System Backup",
+      "family": "Contingency Planning",
+      "description": ""
+    },
+    {
+      "id": "IA-1",
+      "name": "Policy and Procedures",
+      "family": "Identification and Authentication",
+      "description": ""
+    },
+    {
+      "id": "IA-10",
+      "name": "Adaptive Authentication",
+      "family": "Identification and Authentication",
+      "description": "Require individuals accessing the system to employ {{ insert: param, ia-10_odp.01 }} under specific {{ insert: param, ia-10_odp.02 }}."
+    },
+    {
+      "id": "IA-11",
+      "name": "Re-authentication",
+      "family": "Identification and Authentication",
+      "description": "Require users to re-authenticate when {{ insert: param, ia-11_odp }}."
+    },
+    {
+      "id": "IA-12",
+      "name": "Identity Proofing",
+      "family": "Identification and Authentication",
+      "description": ""
+    },
+    {
+      "id": "IA-13",
+      "name": "Identity Providers and Authorization Servers",
+      "family": "Identification and Authentication",
+      "description": "Employ identity providers and authorization servers to manage user, device, and non-person entity (NPE) identities, attributes, and access rights supporting authentication and authorization decisions in accordance with {{ insert: param, ia-13_odp.01 }} using {{ insert: param, ia-13_odp.02 }}."
+    },
+    {
+      "id": "IA-2",
+      "name": "Identification and Authentication (Organizational Users)",
+      "family": "Identification and Authentication",
+      "description": "Uniquely identify and authenticate organizational users and associate that unique identification with processes acting on behalf of those users."
+    },
+    {
+      "id": "IA-3",
+      "name": "Device Identification and Authentication",
+      "family": "Identification and Authentication",
+      "description": "Uniquely identify and authenticate {{ insert: param, ia-03_odp.01 }} before establishing a {{ insert: param, ia-03_odp.02 }} connection."
+    },
+    {
+      "id": "IA-4",
+      "name": "Identifier Management",
+      "family": "Identification and Authentication",
+      "description": "Manage system identifiers by:"
+    },
+    {
+      "id": "IA-5",
+      "name": "Authenticator Management",
+      "family": "Identification and Authentication",
+      "description": "Manage system authenticators by:"
+    },
+    {
+      "id": "IA-6",
+      "name": "Authentication Feedback",
+      "family": "Identification and Authentication",
+      "description": "Obscure feedback of authentication information during the authentication process to protect the information from possible exploitation and use by unauthorized individuals."
+    },
+    {
+      "id": "IA-7",
+      "name": "Cryptographic Module Authentication",
+      "family": "Identification and Authentication",
+      "description": "Implement mechanisms for authentication to a cryptographic module that meet the requirements of applicable laws, executive orders, directives, policies, regulations, standards, and guidelines for such authentication."
+    },
+    {
+      "id": "IA-8",
+      "name": "Identification and Authentication (Non-organizational Users)",
+      "family": "Identification and Authentication",
+      "description": "Uniquely identify and authenticate non-organizational users or processes acting on behalf of non-organizational users."
+    },
+    {
+      "id": "IA-9",
+      "name": "Service Identification and Authentication",
+      "family": "Identification and Authentication",
+      "description": "Uniquely identify and authenticate {{ insert: param, ia-09_odp }} before establishing communications with devices, users, or other services or applications."
+    },
+    {
+      "id": "IR-1",
+      "name": "Policy and Procedures",
+      "family": "Incident Response",
+      "description": ""
+    },
+    {
+      "id": "IR-10",
+      "name": "Integrated Information Security Analysis Team",
+      "family": "Incident Response",
+      "description": ""
+    },
+    {
+      "id": "IR-2",
+      "name": "Incident Response Training",
+      "family": "Incident Response",
+      "description": ""
+    },
+    {
+      "id": "IR-3",
+      "name": "Incident Response Testing",
+      "family": "Incident Response",
+      "description": "Test the effectiveness of the incident response capability for the system {{ insert: param, ir-03_odp.01 }} using the following tests: {{ insert: param, ir-03_odp.02 }}."
+    },
+    {
+      "id": "IR-4",
+      "name": "Incident Handling",
+      "family": "Incident Response",
+      "description": ""
+    },
+    {
+      "id": "IR-5",
+      "name": "Incident Monitoring",
+      "family": "Incident Response",
+      "description": "Track and document incidents."
+    },
+    {
+      "id": "IR-6",
+      "name": "Incident Reporting",
+      "family": "Incident Response",
+      "description": ""
+    },
+    {
+      "id": "IR-7",
+      "name": "Incident Response Assistance",
+      "family": "Incident Response",
+      "description": "Provide an incident response support resource, integral to the organizational incident response capability, that offers advice and assistance to users of the system for the handling and reporting of incidents."
+    },
+    {
+      "id": "IR-8",
+      "name": "Incident Response Plan",
+      "family": "Incident Response",
+      "description": ""
+    },
+    {
+      "id": "IR-9",
+      "name": "Information Spillage Response",
+      "family": "Incident Response",
+      "description": "Respond to information spills by:"
+    },
+    {
+      "id": "MA-1",
+      "name": "Policy and Procedures",
+      "family": "Maintenance",
+      "description": ""
+    },
+    {
+      "id": "MA-2",
+      "name": "Controlled Maintenance",
+      "family": "Maintenance",
+      "description": ""
+    },
+    {
+      "id": "MA-3",
+      "name": "Maintenance Tools",
+      "family": "Maintenance",
+      "description": ""
+    },
+    {
+      "id": "MA-4",
+      "name": "Nonlocal Maintenance",
+      "family": "Maintenance",
+      "description": ""
+    },
+    {
+      "id": "MA-5",
+      "name": "Maintenance Personnel",
+      "family": "Maintenance",
+      "description": ""
+    },
+    {
+      "id": "MA-6",
+      "name": "Timely Maintenance",
+      "family": "Maintenance",
+      "description": "Obtain maintenance support and/or spare parts for {{ insert: param, ma-06_odp.01 }} within {{ insert: param, ma-06_odp.02 }} of failure."
+    },
+    {
+      "id": "MA-7",
+      "name": "Field Maintenance",
+      "family": "Maintenance",
+      "description": "Restrict or prohibit field maintenance on {{ insert: param, ma-07_odp.01 }} to {{ insert: param, ma-07_odp.02 }}."
+    },
+    {
+      "id": "MP-1",
+      "name": "Policy and Procedures",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "MP-2",
+      "name": "Media Access",
+      "family": "Media Protection",
+      "description": "Restrict access to {{ insert: param, mp-2_prm_1 }} to {{ insert: param, mp-2_prm_2 }}."
+    },
+    {
+      "id": "MP-3",
+      "name": "Media Marking",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "MP-4",
+      "name": "Media Storage",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "MP-5",
+      "name": "Media Transport",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "MP-6",
+      "name": "Media Sanitization",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "MP-7",
+      "name": "Media Use",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "MP-8",
+      "name": "Media Downgrading",
+      "family": "Media Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-1",
+      "name": "Policy and Procedures",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-10",
+      "name": "Emergency Shutoff",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-11",
+      "name": "Emergency Power",
+      "family": "Physical and Environmental Protection",
+      "description": "Provide an uninterruptible power supply to facilitate {{ insert: param, pe-11_odp }} in the event of a primary power source loss."
+    },
+    {
+      "id": "PE-12",
+      "name": "Emergency Lighting",
+      "family": "Physical and Environmental Protection",
+      "description": "Employ and maintain automatic emergency lighting for the system that activates in the event of a power outage or disruption and that covers emergency exits and evacuation routes within the facility."
+    },
+    {
+      "id": "PE-13",
+      "name": "Fire Protection",
+      "family": "Physical and Environmental Protection",
+      "description": "Employ and maintain fire detection and suppression systems that are supported by an independent energy source."
+    },
+    {
+      "id": "PE-14",
+      "name": "Environmental Controls",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-15",
+      "name": "Water Damage Protection",
+      "family": "Physical and Environmental Protection",
+      "description": "Protect the system from damage resulting from water leakage by providing master shutoff or isolation valves that are accessible, working properly, and known to key personnel."
+    },
+    {
+      "id": "PE-16",
+      "name": "Delivery and Removal",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-17",
+      "name": "Alternate Work Site",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-18",
+      "name": "Location of System Components",
+      "family": "Physical and Environmental Protection",
+      "description": "Position system components within the facility to minimize potential damage from {{ insert: param, pe-18_odp }} and to minimize the opportunity for unauthorized access."
+    },
+    {
+      "id": "PE-19",
+      "name": "Information Leakage",
+      "family": "Physical and Environmental Protection",
+      "description": "Protect the system from information leakage due to electromagnetic signals emanations."
+    },
+    {
+      "id": "PE-2",
+      "name": "Physical Access Authorizations",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-20",
+      "name": "Asset Monitoring and Tracking",
+      "family": "Physical and Environmental Protection",
+      "description": "Employ {{ insert: param, pe-20_odp.01 }} to track and monitor the location and movement of {{ insert: param, pe-20_odp.02 }} within {{ insert: param, pe-20_odp.03 }}."
+    },
+    {
+      "id": "PE-21",
+      "name": "Electromagnetic Pulse Protection",
+      "family": "Physical and Environmental Protection",
+      "description": "Employ {{ insert: param, pe-21_odp.01 }} against electromagnetic pulse damage for {{ insert: param, pe-21_odp.02 }}."
+    },
+    {
+      "id": "PE-22",
+      "name": "Component Marking",
+      "family": "Physical and Environmental Protection",
+      "description": "Mark {{ insert: param, pe-22_odp }} indicating the impact level or classification level of the information permitted to be processed, stored, or transmitted by the hardware component."
+    },
+    {
+      "id": "PE-23",
+      "name": "Facility Location",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-3",
+      "name": "Physical Access Control",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-4",
+      "name": "Access Control for Transmission",
+      "family": "Physical and Environmental Protection",
+      "description": "Control physical access to {{ insert: param, pe-04_odp.01 }} within organizational facilities using {{ insert: param, pe-04_odp.02 }}."
+    },
+    {
+      "id": "PE-5",
+      "name": "Access Control for Output Devices",
+      "family": "Physical and Environmental Protection",
+      "description": "Control physical access to output from {{ insert: param, pe-05_odp }} to prevent unauthorized individuals from obtaining the output."
+    },
+    {
+      "id": "PE-6",
+      "name": "Monitoring Physical Access",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-7",
+      "name": "Visitor Control",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-8",
+      "name": "Visitor Access Records",
+      "family": "Physical and Environmental Protection",
+      "description": ""
+    },
+    {
+      "id": "PE-9",
+      "name": "Power Equipment and Cabling",
+      "family": "Physical and Environmental Protection",
+      "description": "Protect power equipment and power cabling for the system from damage and destruction."
+    },
+    {
+      "id": "PL-1",
+      "name": "Policy and Procedures",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-10",
+      "name": "Baseline Selection",
+      "family": "Planning",
+      "description": "Select a control baseline for the system."
+    },
+    {
+      "id": "PL-11",
+      "name": "Baseline Tailoring",
+      "family": "Planning",
+      "description": "Tailor the selected control baseline by applying specified tailoring actions."
+    },
+    {
+      "id": "PL-2",
+      "name": "System Security and Privacy Plans",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-3",
+      "name": "System Security Plan Update",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-4",
+      "name": "Rules of Behavior",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-5",
+      "name": "Privacy Impact Assessment",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-6",
+      "name": "Security-related Activity Planning",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-7",
+      "name": "Concept of Operations",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-8",
+      "name": "Security and Privacy Architectures",
+      "family": "Planning",
+      "description": ""
+    },
+    {
+      "id": "PL-9",
+      "name": "Central Management",
+      "family": "Planning",
+      "description": "Centrally manage {{ insert: param, pl-09_odp }}."
+    },
+    {
+      "id": "PM-1",
+      "name": "Information Security Program Plan",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-10",
+      "name": "Authorization Process",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-11",
+      "name": "Mission and Business Process Definition",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-12",
+      "name": "Insider Threat Program",
+      "family": "Program Management",
+      "description": "Implement an insider threat program that includes a cross-discipline insider threat incident handling team."
+    },
+    {
+      "id": "PM-13",
+      "name": "Security and Privacy Workforce",
+      "family": "Program Management",
+      "description": "Establish a security and privacy workforce development and improvement program."
+    },
+    {
+      "id": "PM-14",
+      "name": "Testing, Training, and Monitoring",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-15",
+      "name": "Security and Privacy Groups and Associations",
+      "family": "Program Management",
+      "description": "Establish and institutionalize contact with selected groups and associations within the security and privacy communities:"
+    },
+    {
+      "id": "PM-16",
+      "name": "Threat Awareness Program",
+      "family": "Program Management",
+      "description": "Implement a threat awareness program that includes a cross-organization information-sharing capability for threat intelligence."
+    },
+    {
+      "id": "PM-17",
+      "name": "Protecting Controlled Unclassified Information on External Systems",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-18",
+      "name": "Privacy Program Plan",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-19",
+      "name": "Privacy Program Leadership Role",
+      "family": "Program Management",
+      "description": "Appoint a senior agency official for privacy with the authority, mission, accountability, and resources to coordinate, develop, and implement, applicable privacy requirements and manage privacy risks through the organization-wide privacy program."
+    },
+    {
+      "id": "PM-2",
+      "name": "Information Security Program Leadership Role",
+      "family": "Program Management",
+      "description": "Appoint a senior agency information security officer with the mission and resources to coordinate, develop, implement, and maintain an organization-wide information security program."
+    },
+    {
+      "id": "PM-20",
+      "name": "Dissemination of Privacy Program Information",
+      "family": "Program Management",
+      "description": "Maintain a central resource webpage on the organization’s principal public website that serves as a central source of information about the organization’s privacy program and that:"
+    },
+    {
+      "id": "PM-21",
+      "name": "Accounting of Disclosures",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-22",
+      "name": "Personally Identifiable Information Quality Management",
+      "family": "Program Management",
+      "description": "Develop and document organization-wide policies and procedures for:"
+    },
+    {
+      "id": "PM-23",
+      "name": "Data Governance Body",
+      "family": "Program Management",
+      "description": "Establish a Data Governance Body consisting of {{ insert: param, pm-23_odp.01 }} with {{ insert: param, pm-23_odp.02 }}."
+    },
+    {
+      "id": "PM-24",
+      "name": "Data Integrity Board",
+      "family": "Program Management",
+      "description": "Establish a Data Integrity Board to:"
+    },
+    {
+      "id": "PM-25",
+      "name": "Minimization of Personally Identifiable Information Used in Testing, Training, and Research",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-26",
+      "name": "Complaint Management",
+      "family": "Program Management",
+      "description": "Implement a process for receiving and responding to complaints, concerns, or questions from individuals about the organizational security and privacy practices that includes:"
+    },
+    {
+      "id": "PM-27",
+      "name": "Privacy Reporting",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-28",
+      "name": "Risk Framing",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-29",
+      "name": "Risk Management Program Leadership Roles",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-3",
+      "name": "Information Security and Privacy Resources",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-30",
+      "name": "Supply Chain Risk Management Strategy",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-31",
+      "name": "Continuous Monitoring Strategy",
+      "family": "Program Management",
+      "description": "Develop an organization-wide continuous monitoring strategy and implement continuous monitoring programs that include:"
+    },
+    {
+      "id": "PM-32",
+      "name": "Purposing",
+      "family": "Program Management",
+      "description": "Analyze {{ insert: param, pm-32_odp }} supporting mission essential services or functions to ensure that the information resources are being used consistent with their intended purpose."
+    },
+    {
+      "id": "PM-4",
+      "name": "Plan of Action and Milestones Process",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PM-5",
+      "name": "System Inventory",
+      "family": "Program Management",
+      "description": "Develop and update {{ insert: param, pm-05_odp }} an inventory of organizational systems."
+    },
+    {
+      "id": "PM-6",
+      "name": "Measures of Performance",
+      "family": "Program Management",
+      "description": "Develop, monitor, and report on the results of information security and privacy measures of performance."
+    },
+    {
+      "id": "PM-7",
+      "name": "Enterprise Architecture",
+      "family": "Program Management",
+      "description": "Develop and maintain an enterprise architecture with consideration for information security, privacy, and the resulting risk to organizational operations and assets, individuals, other organizations, and the Nation."
+    },
+    {
+      "id": "PM-8",
+      "name": "Critical Infrastructure Plan",
+      "family": "Program Management",
+      "description": "Address information security and privacy issues in the development, documentation, and updating of a critical infrastructure and key resources protection plan."
+    },
+    {
+      "id": "PM-9",
+      "name": "Risk Management Strategy",
+      "family": "Program Management",
+      "description": ""
+    },
+    {
+      "id": "PS-1",
+      "name": "Policy and Procedures",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-2",
+      "name": "Position Risk Designation",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-3",
+      "name": "Personnel Screening",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-4",
+      "name": "Personnel Termination",
+      "family": "Personnel Security",
+      "description": "Upon termination of individual employment:"
+    },
+    {
+      "id": "PS-5",
+      "name": "Personnel Transfer",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-6",
+      "name": "Access Agreements",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-7",
+      "name": "External Personnel Security",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-8",
+      "name": "Personnel Sanctions",
+      "family": "Personnel Security",
+      "description": ""
+    },
+    {
+      "id": "PS-9",
+      "name": "Position Descriptions",
+      "family": "Personnel Security",
+      "description": "Incorporate security and privacy roles and responsibilities into organizational position descriptions."
+    },
+    {
+      "id": "PT-1",
+      "name": "Policy and Procedures",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": ""
+    },
+    {
+      "id": "PT-2",
+      "name": "Authority to Process Personally Identifiable Information",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": ""
+    },
+    {
+      "id": "PT-3",
+      "name": "Personally Identifiable Information Processing Purposes",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": ""
+    },
+    {
+      "id": "PT-4",
+      "name": "Consent",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": "Implement {{ insert: param, pt-04_odp }} for individuals to consent to the processing of their personally identifiable information prior to its collection that facilitate individuals’ informed decision-making."
+    },
+    {
+      "id": "PT-5",
+      "name": "Privacy Notice",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": "Provide notice to individuals about the processing of personally identifiable information that:"
+    },
+    {
+      "id": "PT-6",
+      "name": "System of Records Notice",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": "For systems that process information that will be maintained in a Privacy Act system of records:"
+    },
+    {
+      "id": "PT-7",
+      "name": "Specific Categories of Personally Identifiable Information",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": "Apply {{ insert: param, pt-07_odp }} for specific categories of personally identifiable information."
+    },
+    {
+      "id": "PT-8",
+      "name": "Computer Matching Requirements",
+      "family": "Personally Identifiable Information Processing and Transparency",
+      "description": "When a system or organization processes information for the purpose of conducting a matching program:"
+    },
+    {
+      "id": "RA-1",
+      "name": "Policy and Procedures",
+      "family": "Risk Assessment",
+      "description": ""
+    },
+    {
+      "id": "RA-10",
+      "name": "Threat Hunting",
+      "family": "Risk Assessment",
+      "description": ""
+    },
+    {
+      "id": "RA-2",
+      "name": "Security Categorization",
+      "family": "Risk Assessment",
+      "description": ""
+    },
+    {
+      "id": "RA-3",
+      "name": "Risk Assessment",
+      "family": "Risk Assessment",
+      "description": ""
+    },
+    {
+      "id": "RA-4",
+      "name": "Risk Assessment Update",
+      "family": "Risk Assessment",
+      "description": ""
+    },
+    {
+      "id": "RA-5",
+      "name": "Vulnerability Monitoring and Scanning",
+      "family": "Risk Assessment",
+      "description": ""
+    },
+    {
+      "id": "RA-6",
+      "name": "Technical Surveillance Countermeasures Survey",
+      "family": "Risk Assessment",
+      "description": "Employ a technical surveillance countermeasures survey at {{ insert: param, ra-06_odp.01 }} {{ insert: param, ra-06_odp.02 }}."
+    },
+    {
+      "id": "RA-7",
+      "name": "Risk Response",
+      "family": "Risk Assessment",
+      "description": "Respond to findings from security and privacy assessments, monitoring, and audits in accordance with organizational risk tolerance."
+    },
+    {
+      "id": "RA-8",
+      "name": "Privacy Impact Assessments",
+      "family": "Risk Assessment",
+      "description": "Conduct privacy impact assessments for systems, programs, or other activities before:"
+    },
+    {
+      "id": "RA-9",
+      "name": "Criticality Analysis",
+      "family": "Risk Assessment",
+      "description": "Identify critical system components and functions by performing a criticality analysis for {{ insert: param, ra-09_odp.01 }} at {{ insert: param, ra-09_odp.02 }}."
+    },
+    {
+      "id": "SA-1",
+      "name": "Policy and Procedures",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-10",
+      "name": "Developer Configuration Management",
+      "family": "System and Services Acquisition",
+      "description": "Require the developer of the system, system component, or system service to:"
+    },
+    {
+      "id": "SA-11",
+      "name": "Developer Testing and Evaluation",
+      "family": "System and Services Acquisition",
+      "description": "Require the developer of the system, system component, or system service, at all post-design stages of the system development life cycle, to:"
+    },
+    {
+      "id": "SA-12",
+      "name": "Supply Chain Protection",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-13",
+      "name": "Trustworthiness",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-14",
+      "name": "Criticality Analysis",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-15",
+      "name": "Development Process, Standards, and Tools",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-16",
+      "name": "Developer-provided Training",
+      "family": "System and Services Acquisition",
+      "description": "Require the developer of the system, system component, or system service to provide the following training on the correct use and operation of the implemented security and privacy functions, controls, and/or mechanisms: {{ insert: param, sa-16_odp }}."
+    },
+    {
+      "id": "SA-17",
+      "name": "Developer Security and Privacy Architecture and Design",
+      "family": "System and Services Acquisition",
+      "description": "Require the developer of the system, system component, or system service to produce a design specification and security and privacy architecture that:"
+    },
+    {
+      "id": "SA-18",
+      "name": "Tamper Resistance and Detection",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-19",
+      "name": "Component Authenticity",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-2",
+      "name": "Allocation of Resources",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-20",
+      "name": "Customized Development of Critical Components",
+      "family": "System and Services Acquisition",
+      "description": "Reimplement or custom develop the following critical system components: {{ insert: param, sa-20_odp }}."
+    },
+    {
+      "id": "SA-21",
+      "name": "Developer Screening",
+      "family": "System and Services Acquisition",
+      "description": "Require that the developer of {{ insert: param, sa-21_odp.01 }}:"
+    },
+    {
+      "id": "SA-22",
+      "name": "Unsupported System Components",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-23",
+      "name": "Specialization",
+      "family": "System and Services Acquisition",
+      "description": "Employ {{ insert: param, sa-23_odp.01 }} on {{ insert: param, sa-23_odp.02 }} supporting mission essential services or functions to increase the trustworthiness in those systems or components."
+    },
+    {
+      "id": "SA-24",
+      "name": "Design For Cyber Resiliency",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-3",
+      "name": "System Development Life Cycle",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-4",
+      "name": "Acquisition Process",
+      "family": "System and Services Acquisition",
+      "description": "Include the following requirements, descriptions, and criteria, explicitly or by reference, using {{ insert: param, sa-04_odp.01 }} in the acquisition contract for the system, system component, or system service:"
+    },
+    {
+      "id": "SA-5",
+      "name": "System Documentation",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-6",
+      "name": "Software Usage Restrictions",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-7",
+      "name": "User-installed Software",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SA-8",
+      "name": "Security and Privacy Engineering Principles",
+      "family": "System and Services Acquisition",
+      "description": "Apply the following systems security and privacy engineering principles in the specification, design, development, implementation, and modification of the system and system components: {{ insert: param, sa-8_prm_1 }}."
+    },
+    {
+      "id": "SA-9",
+      "name": "External System Services",
+      "family": "System and Services Acquisition",
+      "description": ""
+    },
+    {
+      "id": "SC-1",
+      "name": "Policy and Procedures",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-10",
+      "name": "Network Disconnect",
+      "family": "System and Communications Protection",
+      "description": "Terminate the network connection associated with a communications session at the end of the session or after {{ insert: param, sc-10_odp }} of inactivity."
+    },
+    {
+      "id": "SC-11",
+      "name": "Trusted Path",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-12",
+      "name": "Cryptographic Key Establishment and Management",
+      "family": "System and Communications Protection",
+      "description": "Establish and manage cryptographic keys when cryptography is employed within the system in accordance with the following key management requirements: {{ insert: param, sc-12_odp }}."
+    },
+    {
+      "id": "SC-13",
+      "name": "Cryptographic Protection",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-14",
+      "name": "Public Access Protections",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-15",
+      "name": "Collaborative Computing Devices and Applications",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-16",
+      "name": "Transmission of Security and Privacy Attributes",
+      "family": "System and Communications Protection",
+      "description": "Associate {{ insert: param, sc-16_prm_1 }} with information exchanged between systems and between system components."
+    },
+    {
+      "id": "SC-17",
+      "name": "Public Key Infrastructure Certificates",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-18",
+      "name": "Mobile Code",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-19",
+      "name": "Voice Over Internet Protocol",
+      "family": "System and Communications Protection",
+      "description": "Technology-specific; addressed as any other technology or protocol."
+    },
+    {
+      "id": "SC-2",
+      "name": "Separation of System and User Functionality",
+      "family": "System and Communications Protection",
+      "description": "Separate user functionality, including user interface services, from system management functionality."
+    },
+    {
+      "id": "SC-20",
+      "name": "Secure Name/Address Resolution Service (Authoritative Source)",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-21",
+      "name": "Secure Name/Address Resolution Service (Recursive or Caching Resolver)",
+      "family": "System and Communications Protection",
+      "description": "Request and perform data origin authentication and data integrity verification on the name/address resolution responses the system receives from authoritative sources."
+    },
+    {
+      "id": "SC-22",
+      "name": "Architecture and Provisioning for Name/Address Resolution Service",
+      "family": "System and Communications Protection",
+      "description": "Ensure the systems that collectively provide name/address resolution service for an organization are fault-tolerant and implement internal and external role separation."
+    },
+    {
+      "id": "SC-23",
+      "name": "Session Authenticity",
+      "family": "System and Communications Protection",
+      "description": "Protect the authenticity of communications sessions."
+    },
+    {
+      "id": "SC-24",
+      "name": "Fail in Known State",
+      "family": "System and Communications Protection",
+      "description": "Fail to a {{ insert: param, sc-24_odp.02 }} for the following failures on the indicated components while preserving {{ insert: param, sc-24_odp.03 }} in failure: {{ insert: param, sc-24_odp.01 }}."
+    },
+    {
+      "id": "SC-25",
+      "name": "Thin Nodes",
+      "family": "System and Communications Protection",
+      "description": "Employ minimal functionality and information storage on the following system components: {{ insert: param, sc-25_odp }}."
+    },
+    {
+      "id": "SC-26",
+      "name": "Decoys",
+      "family": "System and Communications Protection",
+      "description": "Include components within organizational systems specifically designed to be the target of malicious attacks for detecting, deflecting, and analyzing such attacks."
+    },
+    {
+      "id": "SC-27",
+      "name": "Platform-independent Applications",
+      "family": "System and Communications Protection",
+      "description": "Include within organizational systems the following platform independent applications: {{ insert: param, sc-27_odp }}."
+    },
+    {
+      "id": "SC-28",
+      "name": "Protection of Information at Rest",
+      "family": "System and Communications Protection",
+      "description": "Protect the {{ insert: param, sc-28_odp.01 }} of the following information at rest: {{ insert: param, sc-28_odp.02 }}."
+    },
+    {
+      "id": "SC-29",
+      "name": "Heterogeneity",
+      "family": "System and Communications Protection",
+      "description": "Employ a diverse set of information technologies for the following system components in the implementation of the system: {{ insert: param, sc-29_odp }}."
+    },
+    {
+      "id": "SC-3",
+      "name": "Security Function Isolation",
+      "family": "System and Communications Protection",
+      "description": "Isolate security functions from nonsecurity functions."
+    },
+    {
+      "id": "SC-30",
+      "name": "Concealment and Misdirection",
+      "family": "System and Communications Protection",
+      "description": "Employ the following concealment and misdirection techniques for {{ insert: param, sc-30_odp.02 }} at {{ insert: param, sc-30_odp.03 }} to confuse and mislead adversaries: {{ insert: param, sc-30_odp.01 }}."
+    },
+    {
+      "id": "SC-31",
+      "name": "Covert Channel Analysis",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-32",
+      "name": "System Partitioning",
+      "family": "System and Communications Protection",
+      "description": "Partition the system into {{ insert: param, sc-32_odp.01 }} residing in separate {{ insert: param, sc-32_odp.02 }} domains or environments based on {{ insert: param, sc-32_odp.03 }}."
+    },
+    {
+      "id": "SC-33",
+      "name": "Transmission Preparation Integrity",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-34",
+      "name": "Non-modifiable Executable Programs",
+      "family": "System and Communications Protection",
+      "description": "For {{ insert: param, sc-34_odp.01 }} , load and execute:"
+    },
+    {
+      "id": "SC-35",
+      "name": "External Malicious Code Identification",
+      "family": "System and Communications Protection",
+      "description": "Include system components that proactively seek to identify network-based malicious code or malicious websites."
+    },
+    {
+      "id": "SC-36",
+      "name": "Distributed Processing and Storage",
+      "family": "System and Communications Protection",
+      "description": "Distribute the following processing and storage components across multiple {{ insert: param, sc-36_prm_1 }}: {{ insert: param, sc-36_prm_2 }}."
+    },
+    {
+      "id": "SC-37",
+      "name": "Out-of-band Channels",
+      "family": "System and Communications Protection",
+      "description": "Employ the following out-of-band channels for the physical delivery or electronic transmission of {{ insert: param, sc-37_odp.02 }} to {{ insert: param, sc-37_odp.03 }}: {{ insert: param, sc-37_odp.01 }}."
+    },
+    {
+      "id": "SC-38",
+      "name": "Operations Security",
+      "family": "System and Communications Protection",
+      "description": "Employ the following operations security controls to protect key organizational information throughout the system development life cycle: {{ insert: param, sc-38_odp }}."
+    },
+    {
+      "id": "SC-39",
+      "name": "Process Isolation",
+      "family": "System and Communications Protection",
+      "description": "Maintain a separate execution domain for each executing system process."
+    },
+    {
+      "id": "SC-4",
+      "name": "Information in Shared System Resources",
+      "family": "System and Communications Protection",
+      "description": "Prevent unauthorized and unintended information transfer via shared system resources."
+    },
+    {
+      "id": "SC-40",
+      "name": "Wireless Link Protection",
+      "family": "System and Communications Protection",
+      "description": "Protect external and internal {{ insert: param, sc-40_prm_1 }} from the following signal parameter attacks: {{ insert: param, sc-40_prm_2 }}."
+    },
+    {
+      "id": "SC-41",
+      "name": "Port and I/O Device Access",
+      "family": "System and Communications Protection",
+      "description": "{{ insert: param, sc-41_odp.02 }} disable or remove {{ insert: param, sc-41_odp.01 }} on the following systems or system components: {{ insert: param, sc-41_odp.03 }}."
+    },
+    {
+      "id": "SC-42",
+      "name": "Sensor Capability and Data",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-43",
+      "name": "Usage Restrictions",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-44",
+      "name": "Detonation Chambers",
+      "family": "System and Communications Protection",
+      "description": "Employ a detonation chamber capability within {{ insert: param, sc-44_odp }}."
+    },
+    {
+      "id": "SC-45",
+      "name": "System Time Synchronization",
+      "family": "System and Communications Protection",
+      "description": "Synchronize system clocks within and between systems and system components."
+    },
+    {
+      "id": "SC-46",
+      "name": "Cross Domain Policy Enforcement",
+      "family": "System and Communications Protection",
+      "description": "Implement a policy enforcement mechanism {{ insert: param, sc-46_odp }} between the physical and/or network interfaces for the connecting security domains."
+    },
+    {
+      "id": "SC-47",
+      "name": "Alternate Communications Paths",
+      "family": "System and Communications Protection",
+      "description": "Establish {{ insert: param, sc-47_odp }} for system operations organizational command and control."
+    },
+    {
+      "id": "SC-48",
+      "name": "Sensor Relocation",
+      "family": "System and Communications Protection",
+      "description": "Relocate {{ insert: param, sc-48_odp.01 }} to {{ insert: param, sc-48_odp.02 }} under the following conditions or circumstances: {{ insert: param, sc-48_odp.03 }}."
+    },
+    {
+      "id": "SC-49",
+      "name": "Hardware-enforced Separation and Policy Enforcement",
+      "family": "System and Communications Protection",
+      "description": "Implement hardware-enforced separation and policy enforcement mechanisms between {{ insert: param, sc-49_odp }}."
+    },
+    {
+      "id": "SC-5",
+      "name": "Denial-of-service Protection",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-50",
+      "name": "Software-enforced Separation and Policy Enforcement",
+      "family": "System and Communications Protection",
+      "description": "Implement software-enforced separation and policy enforcement mechanisms between {{ insert: param, sc-50_odp }}."
+    },
+    {
+      "id": "SC-51",
+      "name": "Hardware-based Protection",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-6",
+      "name": "Resource Availability",
+      "family": "System and Communications Protection",
+      "description": "Protect the availability of resources by allocating {{ insert: param, sc-06_odp.01 }} by {{ insert: param, sc-06_odp.02 }}."
+    },
+    {
+      "id": "SC-7",
+      "name": "Boundary Protection",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SC-8",
+      "name": "Transmission Confidentiality and Integrity",
+      "family": "System and Communications Protection",
+      "description": "Protect the {{ insert: param, sc-08_odp }} of transmitted information."
+    },
+    {
+      "id": "SC-9",
+      "name": "Transmission Confidentiality",
+      "family": "System and Communications Protection",
+      "description": ""
+    },
+    {
+      "id": "SI-1",
+      "name": "Policy and Procedures",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-10",
+      "name": "Information Input Validation",
+      "family": "System and Information Integrity",
+      "description": "Check the validity of the following information inputs: {{ insert: param, si-10_odp }}."
+    },
+    {
+      "id": "SI-11",
+      "name": "Error Handling",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-12",
+      "name": "Information Management and Retention",
+      "family": "System and Information Integrity",
+      "description": "Manage and retain information within the system and information output from the system in accordance with applicable laws, executive orders, directives, regulations, policies, standards, guidelines and operational requirements."
+    },
+    {
+      "id": "SI-13",
+      "name": "Predictable Failure Prevention",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-14",
+      "name": "Non-persistence",
+      "family": "System and Information Integrity",
+      "description": "Implement non-persistent {{ insert: param, si-14_odp.01 }} that are initiated in a known state and terminated {{ insert: param, si-14_odp.02 }}."
+    },
+    {
+      "id": "SI-15",
+      "name": "Information Output Filtering",
+      "family": "System and Information Integrity",
+      "description": "Validate information output from the following software programs and/or applications to ensure that the information is consistent with the expected content: {{ insert: param, si-15_odp }}."
+    },
+    {
+      "id": "SI-16",
+      "name": "Memory Protection",
+      "family": "System and Information Integrity",
+      "description": "Implement the following controls to protect the system memory from unauthorized code execution: {{ insert: param, si-16_odp }}."
+    },
+    {
+      "id": "SI-17",
+      "name": "Fail-safe Procedures",
+      "family": "System and Information Integrity",
+      "description": "Implement the indicated fail-safe procedures when the indicated failures occur: {{ insert: param, si-17_prm_1 }}."
+    },
+    {
+      "id": "SI-18",
+      "name": "Personally Identifiable Information Quality Operations",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-19",
+      "name": "De-identification",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-2",
+      "name": "Flaw Remediation",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-20",
+      "name": "Tainting",
+      "family": "System and Information Integrity",
+      "description": "Embed data or capabilities in the following systems or system components to determine if organizational data has been exfiltrated or improperly removed from the organization: {{ insert: param, si-20_odp }}."
+    },
+    {
+      "id": "SI-21",
+      "name": "Information Refresh",
+      "family": "System and Information Integrity",
+      "description": "Refresh {{ insert: param, si-21_odp.01 }} at {{ insert: param, si-21_odp.02 }} or generate the information on demand and delete the information when no longer needed."
+    },
+    {
+      "id": "SI-22",
+      "name": "Information Diversity",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-23",
+      "name": "Information Fragmentation",
+      "family": "System and Information Integrity",
+      "description": "Based on {{ insert: param, si-23_odp.01 }}:"
+    },
+    {
+      "id": "SI-3",
+      "name": "Malicious Code Protection",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-4",
+      "name": "System Monitoring",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-5",
+      "name": "Security Alerts, Advisories, and Directives",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-6",
+      "name": "Security and Privacy Function Verification",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-7",
+      "name": "Software, Firmware, and Information Integrity",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-8",
+      "name": "Spam Protection",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SI-9",
+      "name": "Information Input Restrictions",
+      "family": "System and Information Integrity",
+      "description": ""
+    },
+    {
+      "id": "SR-1",
+      "name": "Policy and Procedures",
+      "family": "Supply Chain Risk Management",
+      "description": ""
+    },
+    {
+      "id": "SR-10",
+      "name": "Inspection of Systems or Components",
+      "family": "Supply Chain Risk Management",
+      "description": "Inspect the following systems or system components {{ insert: param, sr-10_odp.02 }} to detect tampering: {{ insert: param, sr-10_odp.01 }}."
+    },
+    {
+      "id": "SR-11",
+      "name": "Component Authenticity",
+      "family": "Supply Chain Risk Management",
+      "description": ""
+    },
+    {
+      "id": "SR-12",
+      "name": "Component Disposal",
+      "family": "Supply Chain Risk Management",
+      "description": "Dispose of {{ insert: param, sr-12_odp.01 }} using the following techniques and methods: {{ insert: param, sr-12_odp.02 }}."
+    },
+    {
+      "id": "SR-2",
+      "name": "Supply Chain Risk Management Plan",
+      "family": "Supply Chain Risk Management",
+      "description": ""
+    },
+    {
+      "id": "SR-3",
+      "name": "Supply Chain Controls and Processes",
+      "family": "Supply Chain Risk Management",
+      "description": ""
+    },
+    {
+      "id": "SR-4",
+      "name": "Provenance",
+      "family": "Supply Chain Risk Management",
+      "description": "Document, monitor, and maintain valid provenance of the following systems, system components, and associated data: {{ insert: param, sr-04_odp }}."
+    },
+    {
+      "id": "SR-5",
+      "name": "Acquisition Strategies, Tools, and Methods",
+      "family": "Supply Chain Risk Management",
+      "description": "Employ the following acquisition strategies, contract tools, and procurement methods to protect against, identify, and mitigate supply chain risks: {{ insert: param, sr-05_odp }}."
+    },
+    {
+      "id": "SR-6",
+      "name": "Supplier Assessments and Reviews",
+      "family": "Supply Chain Risk Management",
+      "description": "Assess and review the supply chain-related risks associated with suppliers or contractors and the system, system component, or system service they provide {{ insert: param, sr-06_odp }}."
+    },
+    {
+      "id": "SR-7",
+      "name": "Supply Chain Operations Security",
+      "family": "Supply Chain Risk Management",
+      "description": "Employ the following Operations Security (OPSEC) controls to protect supply chain-related information for the system, system component, or system service: {{ insert: param, sr-07_odp }}."
+    },
+    {
+      "id": "SR-8",
+      "name": "Notification Agreements",
+      "family": "Supply Chain Risk Management",
+      "description": "Establish agreements and procedures with entities involved in the supply chain for the system, system component, or system service for the {{ insert: param, sr-08_odp.01 }}."
+    },
+    {
+      "id": "SR-9",
+      "name": "Tamper Resistance and Detection",
+      "family": "Supply Chain Risk Management",
+      "description": "Implement a tamper protection program for the system, system component, or system service."
+    }
+  ]
+}

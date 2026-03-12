@@ -1,0 +1,92 @@
+{
+  "alerts": [
+    {
+      "alert_id": "ALT-001",
+      "rule_id": "R-DELETE-001",
+      "process_name": "cmd.exe",
+      "severity": "HIGH",
+      "confidence": "94%",
+      "tags": ["file-delete", "cmd", "mass-deletion"],
+      "description": "Process attempted to delete multiple files in rapid succession using del /f /s command",
+      "file_path": "C:\\Users\\User\\Documents\\",
+      "generated_at": "2025-03-11T08:12:33Z"
+    },
+    {
+      "alert_id": "ALT-002",
+      "rule_id": "R-RUNKEY-002",
+      "process_name": "regedit.exe",
+      "severity": "HIGH",
+      "confidence": "88%",
+      "tags": ["registry", "persistence", "run-key"],
+      "description": "A program wrote a new entry to the Windows registry startup key to run automatically on boot",
+      "file_path": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "generated_at": "2025-03-11T08:15:44Z"
+    },
+    {
+      "alert_id": "ALT-003",
+      "rule_id": "R-LOG-003",
+      "process_name": "wevtutil.exe",
+      "severity": "HIGH",
+      "confidence": "91%",
+      "tags": ["log-clear", "defense-evasion", "event-log"],
+      "description": "Windows event logs were cleared using wevtutil, which attackers use to hide their tracks",
+      "file_path": "C:\\Windows\\System32\\winevt\\Logs\\",
+      "generated_at": "2025-03-11T08:20:05Z"
+    },
+    {
+      "alert_id": "ALT-004",
+      "rule_id": "R-EXEC-004",
+      "process_name": "powershell.exe",
+      "severity": "MEDIUM",
+      "confidence": "76%",
+      "tags": ["powershell", "script-execution", "encoded-command"],
+      "description": "PowerShell executed a Base64-encoded command, a common technique used to hide malicious scripts",
+      "file_path": "C:\\Users\\User\\Downloads\\update.ps1",
+      "generated_at": "2025-03-11T08:25:17Z"
+    },
+    {
+      "alert_id": "ALT-005",
+      "rule_id": "R-NET-005",
+      "process_name": "chrome.exe",
+      "severity": "MEDIUM",
+      "confidence": "65%",
+      "tags": ["network", "unusual-port", "outbound-connection"],
+      "description": "Browser made an outbound connection to an unusual port (4444) which is commonly used by remote access tools",
+      "file_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "generated_at": "2025-03-11T08:31:52Z"
+    },
+    {
+      "alert_id": "ALT-006",
+      "rule_id": "R-CRED-006",
+      "process_name": "lsass.exe",
+      "severity": "MEDIUM",
+      "confidence": "80%",
+      "tags": ["credential-access", "lsass", "memory-read"],
+      "description": "An external process attempted to read memory from lsass.exe, which stores Windows login credentials",
+      "file_path": "C:\\Windows\\System32\\lsass.exe",
+      "generated_at": "2025-03-11T08:44:09Z"
+    },
+    {
+      "alert_id": "ALT-007",
+      "rule_id": "R-PERSIST-007",
+      "process_name": "schtasks.exe",
+      "severity": "LOW",
+      "confidence": "55%",
+      "tags": ["scheduled-task", "persistence", "autorun"],
+      "description": "A new scheduled task was created to run a script every time the user logs in",
+      "file_path": "C:\\Users\\User\\AppData\\Roaming\\updater.bat",
+      "generated_at": "2025-03-11T09:02:28Z"
+    },
+    {
+      "alert_id": "ALT-008",
+      "rule_id": "R-EVADE-010",
+      "process_name": "rundll32.exe",
+      "severity": "LOW",
+      "confidence": "50%",
+      "tags": ["defense-evasion", "rundll32", "suspicious-load"],
+      "description": "rundll32.exe loaded an unusual DLL file from the user's temp folder instead of a system directory",
+      "file_path": "C:\\Users\\User\\AppData\\Local\\Temp\\helper.dll",
+      "generated_at": "2025-03-11T09:10:44Z"
+    }
+  ]
+}
