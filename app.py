@@ -211,16 +211,16 @@ class AIEngine:
     """Manages Gemini API calls with retry logic and response validation."""
 
     def __init__(self):
-        self.api_key = os.getenv("EXPLANATION_API_KEY", "").strip()
+        self.api_key = os.getenv("GEMINI_API_KEY", "").strip()
         self._client: GeminiClient | None = None
 
     def _get_client(self) -> GeminiClient:
         if self._client is None:
             if not self.api_key:
                 raise ValueError(
-                    "EXPLANATION_API_KEY is not set.\n\n"
+                    "GEMINI_API_KEY is not set.\n\n"
                     "Please create a .env file with:\n"
-                    "EXPLANATION_API_KEY=your_key_here\n\n"
+                    "GEMINI_API_KEY=your_key_here\n\n"
                     "Get a free key at: https://aistudio.google.com/app/apikey"
                 )
             if not GEMINI_AVAILABLE:

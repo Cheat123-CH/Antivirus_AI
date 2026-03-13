@@ -54,7 +54,7 @@ ACTIVITIES = [
     ("malware_dropper.exe","Dylan-PC",     "Quarantined", True),
     ("phish_link.html",    "Jayne-Laptop", "Suspicious",  False),
     ("keylogger.dll",      "Stewart-PC",   "Quarantined", True),
-    ("safe_update.msi",    "ubuntu-dev",   "Low",         False),
+    ("safe_update.msi",    "toto-dev",   "Low",         False),
     ("ransomware.exe",     "Dylan-PC",     "Quarantined", True),
 ]
 

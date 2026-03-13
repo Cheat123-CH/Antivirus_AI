@@ -39,6 +39,20 @@ def open_chatbot(parent, filename="invoice_2024.exe"):
     chat_frame = ctk.CTkScrollableFrame(win, fg_color="#FFFFFF")
     chat_frame.pack(fill="both", expand=True, padx=20, pady=(10, 0))
 
+    # ================= SCROLL FIX =================
+    def _on_mousewheel(event, canvas):
+        """Handle mouse wheel scrolling"""
+        canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+    def _bind_scroll(canvas):
+        """Bind mouse wheel to canvas"""
+        canvas.bind("<Enter>", lambda e: canvas.bind_all("<MouseWheel>", 
+                                                        lambda ev: _on_mousewheel(ev, canvas)))
+        canvas.bind("<Leave>", lambda e: canvas.unbind_all("<MouseWheel>"))
+
+    # Apply scroll binding to the canvas inside CTkScrollableFrame
+    _bind_scroll(chat_frame._parent_canvas)
+
     # Loading indicator (hidden by default)
     loading_frame = tk.Frame(chat_frame, bg="#FFFFFF")
     loading_label = tk.Label(loading_frame, text="⏳ Thinking", font=("Arial", 11), 
@@ -56,15 +70,31 @@ def open_chatbot(parent, filename="invoice_2024.exe"):
             for dot in dots:
                 if not win.is_loading:
                     break
-                loading_label.config(text=f"⏳ Thinking{dot}")
+                # FIX: Check if widget still exists before updating
+                try:
+                    if loading_label.winfo_exists():
+                        loading_label.config(text=f"⏳ Thinking{dot}")
+                    else:
+                        break
+                except:
+                    break
                 win.update()
                 time.sleep(0.3)
-        loading_frame.pack_forget()  # Hide loading when done
+        # FIX: Check if widget exists before forgetting
+        try:
+            if loading_frame.winfo_exists():
+                loading_frame.pack_forget()
+        except:
+            pass
 
     def show_loading():
         """Show loading indicator"""
         win.is_loading = True
-        loading_frame.pack(anchor="w", pady=4)
+        try:
+            if loading_frame.winfo_exists():
+                loading_frame.pack(anchor="w", pady=4)
+        except:
+            pass
         # Start animation in background thread
         thread = threading.Thread(target=animate_loading)
         thread.daemon = True
@@ -73,14 +103,15 @@ def open_chatbot(parent, filename="invoice_2024.exe"):
     def hide_loading():
         """Hide loading indicator"""
         win.is_loading = False
-        loading_frame.pack_forget()
-    def _bind_mousewheel(widget):
-        widget.bind("<MouseWheel>", lambda e: chat_frame._parent_canvas.yview_scroll(
-            int(-1 * (e.delta / 120)), "units"))
-        for child in widget.winfo_children():
-            _bind_mousewheel(child)
+        # FIX: Check if widget exists before forgetting
+        try:
+            if loading_frame.winfo_exists():
+                loading_frame.pack_forget()
+        except:
+            pass
 
     def add_message(text, is_user=False):
+        """Add message to chat"""
         bubble_frame = tk.Frame(chat_frame, bg="#FFFFFF")
         bubble_frame.pack(fill="x", pady=4)
 
@@ -97,12 +128,12 @@ def open_chatbot(parent, filename="invoice_2024.exe"):
             ctk.CTkLabel(bubble, text=text, font=("Arial", 12),
                         text_color="#1A1A1A", wraplength=320,
                         justify="left").pack(padx=14, pady=8)
-
-        # ✅ Bind scroll to new widgets
-        win.after(10, lambda: _bind_mousewheel(chat_frame))
         
         # Auto-scroll to bottom
-        win.after(50, lambda: chat_frame._parent_canvas.yview_moveto(1.0))
+        try:
+            win.after(50, lambda: chat_frame._parent_canvas.yview_moveto(1.0))
+        except:
+            pass
 
     # Welcome message
     add_message(f"Hello! I can help you understand the threat detected in {filename}. I'll explain everything in simple terms!")

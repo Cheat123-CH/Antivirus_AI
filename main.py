@@ -38,6 +38,26 @@ class ModernAISec:
         # Example: simulate a new quarantine after 4 seconds
         self.root.after(4000, lambda: self.update_quarantine("virus_payload.exe"))
 
+    def update_right_panel(self, title, file_path, status):
+        """This method is called when any activity item is clicked."""
+        
+        # 1. Update the 'What happened' block
+        self.ai_desc_label.configure(
+            text=f"Detected Activity: {title}\nStatus reported as: {status}"
+        )
+
+        # 2. Update the 'Where' block (The path)
+        self.ai_path_label.configure(text=file_path)
+
+        # 3. Add AI logic for the 'Risk' block
+        if "Danger" in status or "Malicious" in status:
+            analysis = (f"AI ANALYSIS: The file at {title} is showing high-risk patterns. "
+                       "It attempted to modify system files. Recommendation: Keep Quarantined.")
+        else:
+            analysis = ("AI ANALYSIS: This appears to be a routine system process. "
+                       "No suspicious behavior or unauthorized network connections detected.")
+        
+        self.ai_risk_label.configure(text=analysis)
     # ================= STYLES =================
     def setup_styles(self):
         self.h1 = tkfont.Font(family="Arial", size=24, weight="bold")
@@ -137,6 +157,7 @@ class ModernAISec:
                 file_path
             )
         # ================= RIGHT SECTION =================
+
         right_pane = tk.Frame(grid, bg="#FDFDFD")
         right_pane.pack(side="left", fill="both", expand=True)
 
@@ -184,19 +205,26 @@ class ModernAISec:
         self.right_canvas.bind("<Enter>", lambda e: self._bind_scroll(self.right_canvas))
         self.right_canvas.bind("<Leave>", lambda e: self._unbind_scroll())
 
+# ai_card creation stays the same...
         ai_card = tk.Frame(self.right_scroll_frame,
                            bg=self.colors["card_bg"],
                            padx=25,
                            pady=25)
         ai_card.pack(fill="both", expand=True)
 
-        self.create_info_block(ai_card, "What happened:",
-                               "I detected a malicious invoice file and safely isolated it.")
-        self.create_info_block(ai_card, "Where:",
-                               "C:\\Users\\Downloads\\invoice_2024.exe",
-                               is_path=True)
-        self.create_info_block(ai_card, "Why it's risky:",
-                               "The file matched known ransomware behavior patterns.")
+        # We assign these to self so we can change them later!
+        self.ai_desc_label = self.create_info_block(ai_card, "What happened:",
+                                "Select an activity to see details.")
+        
+        self.ai_path_label = self.create_info_block(ai_card, "Where:",
+                                "---",
+                                is_path=True)
+        
+        # ------------------------------- Huycheng AI explaination ---------------------------------------
+        
+        self.ai_risk_label = self.create_info_block(ai_card, "Why it's risky:",
+                                "Select an item from the left for a security analysis.")
+        
         self.create_status_block(ai_card,
                                  "✔️",
                                  "What to do:",
@@ -459,7 +487,7 @@ class ModernAISec:
         path_label = ctk.CTkLabel(
             item,
             text=file_path,
-            font=("Arial", 10),
+            font=("Arial", 11),
             text_color="#0E0E0F",
             wraplength=300,  # Prevents long paths from pushing the badge away
             justify="left"
@@ -484,24 +512,34 @@ class ModernAISec:
         )
         status_label.pack(padx=8, pady=3)
 
+        on_click = lambda e, t=title, p=file_path, s=status: self.update_right_panel(t, p, s)
+
+        # In CustomTkinter, we must bind to the internal tkinter object (.bind)
+        # and sometimes the child widgets need explicit binding.
+        widgets_to_bind = [item, title_label, path_label, row, time_label]
+        
+        for widget in widgets_to_bind:
+            widget.bind("<Button-1>", on_click)
+
     def create_info_block(self, parent, title, body, is_path=False):
         frame = tk.Frame(parent, bg=self.colors["card_bg"], pady=10)
         frame.pack(fill="x")
         tk.Label(frame, text=title,
                  font=("Arial", 10, "bold"),
                  bg=self.colors["card_bg"]).pack(anchor="w")
-        if is_path:
-            tk.Label(frame, text=body,
-                     font=self.code_font,
-                     bg="#EEEEEE",
-                     padx=10, pady=8,
-                     anchor="w").pack(fill="x", pady=5)
-        else:
-            tk.Label(frame, text=body,
-                     font=self.p,
-                     bg=self.colors["card_bg"],
-                     wraplength=500,
-                     justify="left").pack(anchor="w")
+        
+        # Create the label variable
+        lbl = tk.Label(frame, text=body,
+                       font=self.code_font if is_path else self.p,
+                       bg="#EEEEEE" if is_path else self.colors["card_bg"],
+                       padx=10 if is_path else 0, 
+                       pady=8 if is_path else 0,
+                       anchor="w",
+                       wraplength=500,
+                       justify="left")
+        lbl.pack(fill="x" if is_path else "none", anchor="w")
+        
+        return lbl  
 
     def create_status_block(self, parent, icon, title, items, bg_color, text_color):
         block = tk.Frame(parent, bg=bg_color, padx=15, pady=15)
