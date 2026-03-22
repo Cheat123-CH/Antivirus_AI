@@ -1,0 +1,674 @@
+PowerShell Attack Response
+Review PowerShell logs to identify suspicious commands.
+Look for encoded or obfuscated scripts.
+Isolate the affected machine from the network.
+Run a full malware scan.
+Monitor the system for further scripting activity.
+
+Credential Dumping Response
+Investigate suspicious access to credential storage.
+Reset compromised user passwords.
+Monitor authentication logs for unusual login attempts.
+Isolate the affected machine.
+Check for lateral movement attempts.
+
+WMI Execution Response
+Review Windows Management Instrumentation logs.
+Investigate remote command execution activity.
+Check for unauthorized administrative actions.
+Monitor system management activity for anomalies.
+
+PowerShell Attack Response
+Review PowerShell logs to identify suspicious commands.
+Look for encoded or obfuscated scripts.
+Isolate the affected machine from the network.
+Run a full malware scan.
+Monitor the system for further scripting activity.
+
+Credential Dumping Response
+Investigate suspicious access to credential storage.
+Reset compromised user passwords.
+Monitor authentication logs for unusual login attempts.
+Isolate the affected machine.
+Check for lateral movement attempts.
+
+WMI Execution Response
+Review Windows Management Instrumentation logs.
+Investigate remote command execution activity.
+Check for unauthorized administrative actions.
+Monitor system management activity for anomalies.
+
+Ransomware Response
+Immediately isolate the infected machine from the network.
+Disable file sharing and mapped network drives.
+Do not pay the ransom demand.
+Restore affected files from the most recent clean backup.
+Identify the ransomware variant and report to authorities.
+Scan all connected systems for signs of infection.
+Review email logs to identify the initial phishing vector.
+
+Phishing Email Response
+Quarantine the suspicious email from all mailboxes.
+Identify all users who received or clicked the phishing link.
+Reset passwords for affected accounts immediately.
+Block the malicious sender domain at the mail gateway.
+Scan endpoints that interacted with the email for malware.
+Educate affected users on phishing identification.
+
+Trojan Detection Response
+Quarantine the file identified as a Trojan immediately.
+Investigate what data or systems the Trojan may have accessed.
+Check for any backdoors or persistence mechanisms installed.
+Run a full system scan to detect additional malware components.
+Review outbound network connections for command-and-control activity.
+Restore the system from a clean backup if compromise is confirmed.
+
+Spyware Detection Response
+Isolate the affected device from the network.
+Identify what data may have been collected or exfiltrated.
+Remove the spyware using a reputable security tool.
+Change all passwords stored or typed on the infected device.
+Monitor accounts for unauthorized access or transactions.
+Review browser extensions and installed applications for additional threats.
+
+Adware Response
+Remove adware using an anti-malware tool.
+Reset browser settings to default configuration.
+Check and remove unauthorized browser extensions.
+Review recently installed applications for bundled adware.
+Block known adware domains at the firewall.
+Educate the user on safe software download practices.
+
+Keylogger Detection Response
+Isolate the compromised machine immediately.
+Change all passwords typed on the affected device from a clean machine.
+Identify the keylogger variant and its persistence method.
+Remove the keylogger and all associated files.
+Review logs for any data exfiltration activity.
+Alert financial institutions if banking credentials may be compromised.
+
+Rootkit Detection Response
+Do not attempt to clean the system in place — full reinstall is recommended.
+Preserve forensic evidence before wiping the system.
+Identify the rootkit type and entry point.
+Reinstall the operating system from trusted media.
+Restore data from a pre-infection backup.
+Harden the system before reconnecting to the network.
+
+Cryptominer Detection Response
+Terminate the mining process immediately.
+Remove the cryptominer executable and all associated scheduled tasks.
+Review CPU and GPU usage logs to confirm the timeline of infection.
+Check for persistence mechanisms such as registry keys or cron jobs.
+Block known mining pool domains at the firewall.
+Investigate how the miner was delivered to prevent reinfection.
+
+SQL Injection Response
+Take the affected web application offline immediately.
+Review database logs to identify what data was accessed or modified.
+Patch the vulnerable SQL query with parameterized inputs.
+Reset database credentials and rotate API keys.
+Scan the database for unauthorized changes or inserted backdoors.
+Notify affected users if personal data was exposed.
+
+Cross-Site Scripting Response
+Identify and patch the vulnerable input fields in the web application.
+Invalidate active user sessions on the affected site.
+Review server logs to determine the scope of exploitation.
+Scan the application for additional XSS vulnerabilities.
+Implement a Content Security Policy header.
+Notify users to clear browser cache and change passwords.
+
+Brute Force Attack Response
+Lock the targeted accounts after repeated failed login attempts.
+Block the attacking IP addresses at the firewall.
+Enable multi-factor authentication on all affected accounts.
+Review authentication logs to identify all targeted accounts.
+Force password resets for any accounts that may have been compromised.
+Implement account lockout policies across all systems.
+
+Denial of Service Response
+Activate DDoS mitigation tools or contact the ISP for upstream filtering.
+Identify and block the source IP addresses generating malicious traffic.
+Reroute legitimate traffic through a content delivery network.
+Preserve logs for forensic and legal purposes.
+Notify affected users and stakeholders of the service disruption.
+Review firewall and router configurations to improve resilience.
+
+Man-in-the-Middle Attack Response
+Terminate the intercepted session immediately.
+Revoke and reissue any compromised certificates.
+Notify users whose communications may have been intercepted.
+Implement certificate pinning and enforce HTTPS across all services.
+Investigate the network for rogue access points or ARP spoofing.
+Review network traffic logs for signs of data exfiltration.
+
+Insider Threat Response
+Immediately revoke access credentials for the suspected insider.
+Preserve all relevant logs and communications as evidence.
+Conduct a forensic investigation of the insider's activity.
+Notify legal and HR departments before taking disciplinary action.
+Audit access permissions for all sensitive systems.
+Review data loss prevention alerts for evidence of exfiltration.
+
+USB Malware Response
+Disconnect the infected USB device immediately.
+Quarantine the affected machine from the network.
+Run a full malware scan on all systems the USB was connected to.
+Disable USB autorun features across all endpoints.
+Review security policies on removable media usage.
+Identify the source of the USB and trace its distribution.
+
+Zero-Day Exploit Response
+Isolate affected systems immediately to prevent lateral movement.
+Apply vendor-provided emergency patches as soon as available.
+Implement temporary mitigations such as disabling the vulnerable feature.
+Monitor all systems for signs of exploitation.
+Share threat intelligence with relevant security communities.
+Conduct a full forensic investigation of affected systems.
+
+Data Exfiltration Response
+Block outbound connections to the identified external destination.
+Identify what data was transferred and its sensitivity level.
+Preserve network logs for forensic analysis.
+Notify affected individuals and regulatory authorities as required.
+Review and tighten data loss prevention policies.
+Conduct an audit of access controls for sensitive data.
+
+Fileless Malware Response
+Examine running processes and memory for malicious activity.
+Review registry keys and scheduled tasks for persistence mechanisms.
+Capture a memory dump for forensic analysis.
+Block associated malicious indicators at the network level.
+Patch the vulnerability used for initial access.
+Implement application whitelisting to prevent future execution.
+
+Supply Chain Attack Response
+Identify all systems and software affected by the compromised supply chain component.
+Immediately remove or isolate the affected software or update.
+Notify the software vendor of the compromise.
+Conduct a full audit of all third-party software in use.
+Review code integrity and signing practices.
+Monitor for indicators of compromise across all affected systems.
+
+Account Takeover Response
+Lock the compromised account immediately.
+Force a password reset and revoke all active sessions.
+Enable multi-factor authentication on the account.
+Review account activity logs to determine the scope of access.
+Notify the account owner and relevant stakeholders.
+Check for unauthorized changes made during the takeover period.
+
+Malicious Email Attachment Response
+Quarantine the email and attachment across all affected mailboxes.
+Identify all users who downloaded or opened the attachment.
+Scan affected endpoints for malware introduced by the attachment.
+Block the sender domain and file hash at the email gateway.
+Reset credentials for users who interacted with the attachment.
+Update email filtering rules to catch similar attachments.
+
+Network Scanning Response
+Identify the source IP address conducting the scan.
+Block the scanning host at the firewall.
+Review what systems and ports were probed during the scan.
+Check for signs of follow-up exploitation attempts.
+Update network segmentation to limit future scan visibility.
+Log and report the scanning activity for threat intelligence.
+
+Privilege Escalation Response
+Immediately revoke the elevated privileges obtained by the attacker.
+Identify the vulnerability or misconfiguration used for escalation.
+Patch or remediate the privilege escalation vector.
+Review all actions taken while elevated privileges were active.
+Audit all privileged accounts for unauthorized changes.
+Implement least-privilege principles across all user accounts.
+
+Remote Access Trojan Response
+Sever the remote connection by isolating the affected system.
+Identify the RAT variant and its command-and-control server.
+Remove the RAT and all persistence mechanisms.
+Change all credentials that may have been visible to the attacker.
+Review all files accessed or modified during the remote session.
+Block the command-and-control domain at the network level.
+
+Pass-the-Hash Attack Response
+Invalidate all Kerberos tickets and NTLM session tokens.
+Reset passwords for all accounts whose hashes were stolen.
+Identify the source of the hash extraction.
+Implement credential guard on all Windows systems.
+Review lateral movement activity across the network.
+Restrict NTLM authentication where possible.
+
+Drive-by Download Response
+Identify the malicious website that delivered the download.
+Block the URL and domain at the web proxy.
+Scan affected endpoints for installed malware.
+Update browser and plugin versions to patch exploited vulnerabilities.
+Notify users who visited the malicious site.
+Review web filtering policies to prevent future drive-by downloads.
+
+Watering Hole Attack Response
+Identify all users who visited the compromised website.
+Isolate endpoints that accessed the site during the attack window.
+Run a full malware scan on all affected systems.
+Block the compromised website at the web proxy.
+Patch browser and plugin vulnerabilities exploited in the attack.
+Monitor affected accounts for signs of further compromise.
+
+Typosquatting Response
+Identify the fraudulent domain and report it to the registrar for takedown.
+Notify users who may have entered credentials on the fake site.
+Block the typosquatted domain at the DNS level.
+Reset passwords for all users who interacted with the domain.
+Review logs to determine the extent of credential exposure.
+Educate users on verifying URLs before entering sensitive information.
+
+Botnet Infection Response
+Isolate infected systems from the network immediately.
+Identify the botnet command-and-control server and block it.
+Remove the botnet malware from all infected endpoints.
+Reset all credentials on affected systems.
+Monitor network traffic for signs of remaining bot activity.
+Report the botnet infrastructure to relevant authorities.
+
+Backdoor Installation Response
+Identify and remove all backdoor files and processes.
+Review all user accounts for unauthorized additions.
+Audit firewall rules for unauthorized inbound access rules.
+Change all system credentials immediately.
+Conduct a full forensic review of activity since the backdoor was installed.
+Rebuild the system from a clean image if the backdoor is deeply embedded.
+
+Email Spoofing Response
+Configure DMARC, DKIM, and SPF records to prevent future spoofing.
+Identify recipients of the spoofed emails and warn them.
+Block the spoofed domain at the mail gateway.
+Review email logs for the scope of the spoofing campaign.
+Report the spoofing activity to the relevant email provider.
+Educate users on identifying spoofed sender addresses.
+
+DNS Hijacking Response
+Restore DNS records to their correct values immediately.
+Change DNS provider credentials and enable multi-factor authentication.
+Notify users who may have been redirected to malicious sites.
+Scan affected systems for malware installed via the redirected traffic.
+Review DNS change logs to identify the attacker's access method.
+Implement DNSSEC to prevent future hijacking.
+
+Exploit Kit Response
+Patch all vulnerabilities targeted by the exploit kit immediately.
+Isolate systems that were exposed to the exploit kit.
+Scan for malware payloads delivered by the kit.
+Block the domains and IPs associated with the exploit kit.
+Review browser and plugin versions across all endpoints.
+Update intrusion detection signatures to detect the exploit kit.
+
+Lateral Movement Response
+Isolate systems involved in lateral movement from the network.
+Identify the accounts and credentials used for movement.
+Reset all compromised credentials immediately.
+Review authentication logs to map the attacker's path.
+Implement network segmentation to limit future lateral movement.
+Audit trust relationships between systems.
+
+Command and Control Response
+Block all identified command-and-control IP addresses and domains.
+Terminate all active connections to the C2 server.
+Isolate systems that communicated with the C2 infrastructure.
+Remove the malware maintaining the C2 connection.
+Review DNS logs to identify all C2 communication attempts.
+Share C2 indicators with threat intelligence platforms.
+
+Memory Injection Response
+Capture a memory dump of the affected process for analysis.
+Terminate the injected process immediately.
+Identify the injector and remove it from the system.
+Review all running processes for additional injection activity.
+Patch the vulnerability used for injection.
+Implement endpoint detection and response tools to catch future injection.
+
+Rogue Access Point Response
+Disable and physically remove the rogue access point.
+Identify all devices that connected to the rogue AP.
+Reset credentials for all users who connected through the rogue AP.
+Scan connected devices for malware or credential theft tools.
+Review wireless network logs for the duration of the rogue AP activity.
+Implement wireless intrusion detection to prevent future rogue APs.
+
+Log Tampering Response
+Preserve all remaining log data immediately.
+Identify what log entries were modified, deleted, or cleared.
+Restore logs from backup or secondary log sources.
+Investigate the attacker's actions during the period logs were tampered.
+Implement log integrity monitoring and centralized log storage.
+Review access controls on log files to prevent future tampering.
+
+Vulnerability Exploitation Response
+Apply the relevant security patch immediately.
+Isolate exploited systems from the network.
+Conduct a forensic review to determine what was accessed post-exploitation.
+Scan for additional vulnerabilities on the same system.
+Review patch management processes to prevent future exploitation.
+Update intrusion detection signatures for the exploited vulnerability.
+
+Social Engineering Response
+Identify the employees targeted by the social engineering attack.
+Determine what information was disclosed during the interaction.
+Reset credentials for any accounts that may have been compromised.
+Conduct an immediate security awareness session for targeted employees.
+Review physical and digital access controls.
+Document the attack for future training material.
+
+Malware Persistence Response
+Identify and remove all persistence mechanisms including registry keys, scheduled tasks, and startup entries.
+Reboot the system to confirm the malware does not survive restart.
+Conduct a full malware scan after reboot.
+Review audit logs for changes made by the malware during its active period.
+Patch the initial access vulnerability used to install the malware.
+Monitor the system closely for signs of re-infection.
+
+Container Escape Response
+Isolate the compromised container and its host system immediately.
+Identify the vulnerability used to escape the container boundary.
+Review what host resources were accessed after the escape.
+Patch the container runtime vulnerability.
+Audit all container configurations for similar weaknesses.
+Implement runtime security tools to detect future escape attempts.
+
+Cloud Storage Misconfiguration Response
+Immediately restrict public access to the misconfigured cloud storage bucket.
+Identify what data was exposed and for how long.
+Review access logs to determine if unauthorized parties accessed the data.
+Notify affected individuals and regulatory authorities as required.
+Audit all cloud storage configurations for similar misconfigurations.
+Implement automated cloud security posture management tools.
+
+API Abuse Response
+Revoke and rotate all compromised API keys immediately.
+Identify what data or actions were accessed via the abused API.
+Review API access logs for the full scope of the abuse.
+Implement rate limiting and anomaly detection on the API.
+Audit API authentication and authorization controls.
+Notify affected users if their data was accessed.
+
+Formjacking Response
+Remove the malicious script from the affected web application immediately.
+Identify all users who submitted data during the formjacking period.
+Notify affected users to monitor their financial accounts.
+Conduct a full code audit of the web application.
+Implement subresource integrity checks for third-party scripts.
+Review content delivery network logs for script injection activity.
+
+Password Spraying Response
+Lock all accounts targeted by the password spray.
+Identify the source IP addresses and block them at the firewall.
+Review which accounts may have been successfully compromised.
+Enforce multi-factor authentication across all accounts.
+Reset passwords for all targeted accounts.
+Implement login anomaly detection to catch future spray attempts.
+
+Juice Jacking Response
+Disconnect the device from the public charging station immediately.
+Run a full malware scan on the affected device.
+Change all passwords that may have been accessible on the device.
+Review the device for unauthorized application installations.
+Wipe and restore the device if compromise is confirmed.
+Educate users to use AC adapters or personal charging cables in public.
+
+
+PowerShell Attack Response
+Isolate the affected machine from the network to stop further damage.
+Review PowerShell logs to identify suspicious or encoded commands.
+Look for encoded or obfuscated scripts running on the system.
+Terminate any suspicious PowerShell processes still running.
+Run a full malware scan to detect anything downloaded by the script.
+Reset passwords for accounts active during the attack.
+Remove any scheduled tasks or registry entries created by the script.
+Block outbound connections to any remote addresses contacted by the script.
+Re-enable PowerShell with restricted settings after cleanup is complete.
+Monitor the system for any further scripting activity.
+
+Credential Dumping Response
+Immediately isolate the compromised machine to stop stolen passwords being used.
+Force a password reset for every account that was active on the affected machine.
+Reset all administrator and domain account passwords as the highest priority.
+Check for new accounts or permission changes made by the attacker.
+Look for credential dumping tools such as Mimikatz left on the system.
+Revoke and reissue all authentication tickets across the network.
+Enable multi-factor authentication on all accounts immediately.
+Scan all nearby machines for signs the attacker moved sideways using stolen passwords.
+Monitor login logs closely for suspicious access attempts using the stolen passwords.
+Notify all affected users to change their passwords from a different clean device.
+Check email accounts for unauthorized access or new forwarding rules.
+Alert your bank and cloud service providers if financial credentials may be affected.
+
+WMI Execution Response
+Disable Windows Management Instrumentation temporarily on affected systems.
+Remove all attacker-created WMI subscriptions used to maintain access.
+Isolate the affected system to prevent the attacker from issuing further remote commands.
+Review WMI logs to understand what commands were run and which systems were affected.
+Reset credentials used for remote WMI connections.
+Remove any files dropped during the WMI command execution.
+Scan other machines on the network for similar WMI persistence mechanisms.
+Re-enable WMI with strict access controls once the threat is removed.
+Deploy monitoring to alert on unusual WMI activity in future.
+Document the attack and share findings with your security team.
+
+Ransomware Response
+Disconnect the infected computer from WiFi and unplug the network cable immediately.
+Do not pay the ransom — paying does not guarantee your files will be returned.
+Restore your files from the most recent clean backup you have.
+Verify the backup is clean before restoring — ransomware sometimes encrypts backups too.
+Wipe the infected computer and reinstall the operating system from scratch.
+Check whether your backup copies were also deleted by the ransomware.
+Scan all other computers on the same network for signs of infection.
+Report the attack to your national cybersecurity authority and your cyber insurer.
+Change all passwords from a different clean device as a precaution.
+Block the ransomware's remote server addresses at your network firewall.
+Do not try to open encrypted files — it will not help and may cause further damage.
+Notify affected individuals if any of their personal data was involved.
+
+Keylogger Detection Response
+Isolate the infected device immediately to stop captured data being sent to the attacker.
+Change all passwords that were typed on the infected device — use a different clean device.
+Enable multi-factor authentication on all important accounts such as email and banking.
+Scan the device with security software to find and remove the keylogger.
+Check login history on all your accounts for any unauthorized access.
+Review browser saved passwords — consider them all compromised and reset each one.
+Check for any bank transactions or account changes that look suspicious.
+Alert your bank if you typed any banking passwords or card numbers on the infected device.
+Remove any browser extensions or programs you do not recognise.
+Reimage the device to guarantee it is completely clean if you are unsure.
+Monitor your financial accounts closely for the next several weeks.
+Notify affected parties if any business or customer data was captured.
+
+Trojan Detection Response
+Quarantine the trojan file and cut the computer off from the internet.
+Terminate any running processes associated with the trojan.
+Run a full malware scan to find any additional components the trojan installed.
+Remove all files and registry entries created by the trojan.
+Review outbound network connections to identify any remote servers contacted.
+Reset passwords for all accounts used on the infected machine.
+Restore any system files modified by the trojan from a clean backup.
+Block the trojan's remote server addresses at your firewall.
+Check other computers on the network that may have been reached by the trojan.
+Educate the user not to open unknown executable files received by email.
+Reimage the system if a fully clean state cannot be guaranteed.
+
+Spyware Detection Response
+Isolate the affected device from the network straight away.
+Identify what personal data may have been collected or sent to the attacker.
+Remove the spyware using a reputable security tool.
+Change all passwords stored or entered on the infected device from a clean machine.
+Review your accounts for any unauthorized access or unusual activity.
+Check browser extensions and installed programs for additional threats.
+Monitor your financial accounts and credit report for unusual transactions.
+Notify affected individuals if their data was collected without consent.
+Reimage the device if spyware cannot be fully removed.
+
+Adware Response
+Remove the adware using a reputable anti-malware tool.
+Reset your browser settings to default to remove unwanted homepage and search engine changes.
+Remove any browser extensions that were installed without your permission.
+Review recently installed programs and remove anything you do not recognise.
+Block known adware websites at your firewall or router.
+Clear your browser cookies and browsing history.
+Educate the user to only download software from official and trusted sources.
+Read installation prompts carefully in future to avoid bundled adware.
+
+Cryptominer Detection Response
+Terminate the mining program immediately to recover your computer's performance.
+Remove the mining executable and all related files and scheduled tasks.
+Check your startup programs and scheduled tasks for the miner trying to restart itself.
+Scan the system for any additional malware that arrived with the miner.
+Block known cryptocurrency mining websites and pool addresses at your firewall.
+Monitor your computer's processor usage after removal to confirm the miner is gone.
+Reset passwords as a precaution since miners often arrive alongside password stealers.
+Investigate how the miner arrived — common sources are pirated software and malicious ads.
+Check your electricity bill for unexplained increases that may indicate a long-running miner.
+
+Macro Malware Response
+Turn off automatic macro execution in all Microsoft Office programs.
+Remove the malicious document and any files it created on the system.
+Check for any programs still running that were started by the macro.
+Scan the system for secondary malware installed by the macro.
+Check your email security settings to stop similar documents arriving in future.
+Reset passwords for accounts that were active when the document was opened.
+Apply all pending Microsoft Office security updates.
+Teach users never to click Enable Macros in documents received by email.
+Reimage the system if infection cannot be fully cleaned.
+
+Crack Tool and Pirated Software Response
+Uninstall the crack tool and all software that arrived with it immediately.
+Run a full security scan since crack tools almost always contain hidden malware.
+Re-enable any security software that was turned off during installation.
+Restore any security settings that were changed.
+Remove any browser extensions or programs installed without your consent.
+Change passwords for all accounts on the affected computer as a precaution.
+Check for keyloggers and password stealers that commonly bundle with crack tools.
+Monitor network traffic from the computer for any suspicious outbound connections.
+Remind the user that pirated software is one of the most common ways malware enters a computer.
+Consider reimaging the system to guarantee it is completely clean.
+
+Phishing Email Response
+Remove the suspicious email from all mailboxes across your organisation.
+Identify all users who received or clicked links in the phishing email.
+Reset passwords for all accounts that may have been entered on the fake site.
+Block the malicious sender domain at your email gateway.
+Scan devices that interacted with the email for any malware that was installed.
+Enable multi-factor authentication on affected accounts immediately.
+Warn other users about the phishing campaign so they do not click it.
+Educate the affected user on how to identify phishing emails in future.
+
+Brute Force Attack Response
+Lock all accounts that were targeted by repeated failed login attempts.
+Block the attacking IP addresses at your firewall immediately.
+Enable multi-factor authentication on all affected accounts.
+Review login logs to see if any account was successfully broken into.
+Force password resets for any accounts that may have been compromised.
+Set up account lockout rules so future brute force attempts are automatically blocked.
+
+Account Takeover Response
+Lock the compromised account immediately and end all active sessions.
+Force a password reset and revoke all active login sessions.
+Enable multi-factor authentication on the account.
+Check the account's activity history to see what was accessed or changed.
+Notify the account owner and relevant people in your organisation.
+Review any changes made to the account while it was under the attacker's control.
+
+Data Exfiltration Response
+Block the outbound connection to the external address the data was sent to.
+Identify exactly what data was transferred and how sensitive it is.
+Preserve network logs for investigation.
+Notify affected individuals and regulatory authorities as required by law.
+Tighten data access controls to prevent similar transfers in future.
+Review your data loss prevention policies and tools.
+
+USB Malware Response
+Remove the infected USB device from the computer immediately.
+Disconnect the affected computer from the network.
+Run a full malware scan on every computer the USB was connected to.
+Disable USB autorun features on all computers to prevent automatic execution.
+Review your policy on the use of personal USB drives in the workplace.
+Try to find where the USB came from and whether others received similar devices.
+
+Backdoor Installation Response
+Remove all backdoor files, processes, and network connections immediately.
+Review all user accounts for any that were added without authorisation.
+Check firewall rules for any new inbound access rules created by the attacker.
+Change all system passwords immediately.
+Carry out a full forensic review of everything that happened since the backdoor was installed.
+Rebuild the system from a clean image if the backdoor is deeply embedded.
+
+Remote Access Trojan Response
+Cut off the remote connection by isolating the affected computer from the network.
+Identify what the attacker accessed or changed during their remote session.
+Remove the remote access tool and all its persistence mechanisms.
+Change all passwords that were visible or accessible to the attacker.
+Review all files that were opened or copied during the remote session.
+Block the attacker's remote server address at the network level.
+Reimage the system to guarantee complete removal of the remote access capability.
+
+Privilege Escalation Response
+Revoke the elevated permissions the attacker obtained immediately.
+Identify which security weakness was used to gain higher-level access.
+Fix the security weakness or apply the relevant security patch.
+Review everything that was done while elevated access was active.
+Audit all privileged accounts for any changes made without authorisation.
+Apply the least privilege principle — ensure users only have the access they truly need.
+
+Network Scanning Response
+Identify the IP address that was scanning your network and block it at the firewall.
+Review which systems and services were discovered during the scan.
+Check for any follow-up attacks that may have happened after the scan.
+Improve network segmentation so future scans reveal less information.
+Log and document the scanning activity for future reference.
+
+Zero-Day Exploit Response
+Isolate affected systems immediately to prevent the attack spreading.
+Apply any emergency patches provided by the software vendor as soon as they are available.
+Use temporary workarounds such as disabling the vulnerable feature until a patch exists.
+Monitor all systems for signs of exploitation.
+Carry out a full investigation of affected systems.
+Share information about the attack with security communities to help protect others.
+
+Social Engineering Response
+Identify which employees were targeted and what information they shared.
+Reset credentials for any accounts that may have been given to the attacker.
+Conduct an immediate security awareness session for targeted employees.
+Review physical and digital access controls to close any gaps.
+Use this incident as a training example for other employees.
+Document the attack method for your security awareness programme.
+
+Supply Chain Attack Response
+Identify all systems running the compromised software or component.
+Remove or isolate the affected software immediately.
+Contact the software vendor to report the compromise and get guidance.
+Audit all third-party software your organisation relies on.
+Monitor all affected systems for signs of exploitation.
+Review your software procurement and update verification processes.
+
+Password Spraying Response
+Lock all accounts that were targeted.
+Block the IP addresses used in the attack.
+Check which accounts may have been successfully accessed.
+Enable multi-factor authentication on all accounts.
+Reset passwords for all targeted accounts.
+Set up detection rules to catch similar spray attacks in future.
+
+Command and Control Response
+Block all identified remote server addresses used by the malware at the firewall.
+End all active connections to the attacker's remote servers.
+Isolate computers that were communicating with the attacker's servers.
+Remove the malware that was maintaining the connection.
+Review your network traffic logs to identify all communication attempts.
+Share the attacker's server details with threat intelligence services.
+
+Fileless Malware Response
+Capture a memory snapshot of the affected system before restarting to preserve evidence.
+Identify all programs running without a file on disk as these represent the hidden malware.
+End all identified malicious processes and remove their restart mechanisms.
+Isolate the system to prevent further attacker communication.
+Search for persistence mechanisms that reload the hidden code at startup.
+Reset all credentials for accounts active during the attack.
+Reboot the system in a controlled way after removing persistence to clear the malicious code from memory.

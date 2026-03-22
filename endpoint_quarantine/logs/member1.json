@@ -1,0 +1,73 @@
+[
+    {
+        "event_id": "E7007",
+        "timestamp": "2026-03-09T08:12:00Z",
+        "severity": "HIGH",
+        "host": {
+            "hostname": "WIN-ALICE",
+            "ip_address": ""
+        },
+        "user": {
+            "username": "Alice",
+            "domain": ""
+        },
+        "artifact": {
+            "type": "file",
+            "file_path": "C:\\Users\\TUF\\Documents\\malware.exe",
+            "file_name": "malware.exe",
+            "hash": "44d88612fea8a8f36de82e1278abb02f",
+            "size": ""
+        },
+        "process": {
+            "pid": 1106,
+            "name": "powershell.exe",
+            "command_line": "powershell.exe -EncodedCommand ...",
+            "parent_pid": ""
+        },
+        "detection_signals": {
+            "sigma_hit": true,
+            "sigma_rules": [
+                "Encoded PowerShell Execution"
+            ],
+            "ml_confidence": 0.0,
+            "vt_malicious": true
+        },
+        "recommended_action": "QUARANTINE"
+    },
+    {
+        "event_id": "E7007",
+        "timestamp": "2026-03-09T08:12:00Z",
+        "severity": "HIGH",
+        "host": {
+            "hostname": "WIN-ALICE",
+            "ip_address": ""
+        },
+        "user": {
+            "username": "Alice",
+            "domain": ""
+        },
+        "artifact": {
+            "type": "file",
+            "file_path": "C:\\Users\\TUF\\Documents\\virus.exe",
+            "file_name": "virus.exe",
+            "hash": "44d88612fea8a8f36de82e1278abb02f",
+            "size": ""
+        },
+        "process": {
+            "pid": 1106,
+            "name": "powershell.exe",
+            "command_line": "powershell.exe -EncodedCommand ...",
+            "parent_pid": ""
+        },
+        "detection_signals": {
+            "sigma_hit": true,
+            "sigma_rules": [
+                "Encoded PowerShell Execution"
+            ],
+            "ml_confidence": 0.0,
+            "vt_malicious": true
+        },
+        "recommended_action": "QUARANTINE",
+        "processed": true
+    }
+]

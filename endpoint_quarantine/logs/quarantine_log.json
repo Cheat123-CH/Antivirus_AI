@@ -1,0 +1,47 @@
+[
+    {
+        "timestamp": "2026-03-16 10:11:47",
+        "action": "QUARANTINED",
+        "file_name": "malware.exe",
+        "reason": "HIGH-RISK FILE",
+        "hash": "44d88612fea8a8f36de82e1278abb02f",
+        "size": 0,
+        "user_account": "TUF"
+    },
+    {
+        "timestamp": "2026-03-16 10:12:55",
+        "action": "QUARANTINED",
+        "file_name": "malware.exe",
+        "reason": "HIGH-RISK FILE",
+        "hash": "44d88612fea8a8f36de82e1278abb02f",
+        "size": 0,
+        "user_account": "DESKTOP-4Q45NOT$"
+    },
+    {
+        "timestamp": "2026-03-16 10:19:57",
+        "action": "QUARANTINED",
+        "file_name": "malware.exe",
+        "reason": "HIGH-RISK FILE",
+        "hash": "44d88612fea8a8f36de82e1278abb02f",
+        "size": 0,
+        "user_account": "TUF"
+    },
+    {
+        "timestamp": "2026-03-16 10:59:28",
+        "action": "QUARANTINED",
+        "file_name": "virus.exe",
+        "reason": "HIGH-RISK FILE",
+        "hash": "44d88612fea8a8f36de82e1278abb02f",
+        "size": 0,
+        "user_account": "TUF"
+    },
+    {
+        "timestamp": "2026-03-16 11:16:44",
+        "action": "QUARANTINED",
+        "file_name": "malware.exe",
+        "reason": "HIGH-RISK FILE",
+        "hash": "44d88612fea8a8f36de82e1278abb02f",
+        "size": 0,
+        "user_account": "TUF"
+    }
+]

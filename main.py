@@ -5,6 +5,7 @@ from tkinter import font as tkfont
 from chatbot.chatbot import open_chatbot
 from alert_popup import show_security_popup
 from dataset.scan_file import get_activities, STATUS_COLORS
+from quarantine import open_quarantine_page
 
 class ModernAISec:
     def __init__(self, root):
@@ -22,14 +23,10 @@ class ModernAISec:
             "text_sub": "#6E6E73",
             "card_bg": "#F8F9FA",
         }
-    # show Dashbord when click buttom
-    # In this case the TK window 
-    # def show_dashboard(self):
-    #     # self.root.deiconify()  # make sure window is visible
-    #     # self.root.lift()       # bring to front
-    #     # self.root.focus_force() 
-    #     pass
 
+        # Track current selected file and chatbot window
+        self.current_selected_file = None
+        self.chatbot_window = None
         self.quarantine_count = 1  # initial quarantine count
 
         self.setup_styles()
@@ -40,6 +37,9 @@ class ModernAISec:
 
     def update_right_panel(self, title, file_path, status):
         """This method is called when any activity item is clicked."""
+        
+        # Store current selected file for chatbot
+        self.current_selected_file = title
         
         # 1. Update the 'What happened' block
         self.ai_desc_label.configure(
@@ -58,6 +58,29 @@ class ModernAISec:
                        "No suspicious behavior or unauthorized network connections detected.")
         
         self.ai_risk_label.configure(text=analysis)
+        
+        # 4. Update chatbot if it's open
+        self.update_chatbot_context(title)
+
+    def update_chatbot_context(self, filename):
+        """Update the chatbot to discuss the selected file if it's open"""
+        if hasattr(self, 'chatbot_window') and self.chatbot_window and self.chatbot_window.winfo_exists():
+            try:
+                self.chatbot_window.update_context(filename)
+            except:
+                # If update fails, window might be closing
+                pass
+
+    def open_chatbot_with_current_file(self):
+        """Open chatbot with the currently selected file"""
+        from chatbot.chatbot import open_chatbot
+        
+        # Use current selected file or default
+        filename = getattr(self, 'current_selected_file', "invoice_2024.exe")
+        
+        # Open chatbot and store reference
+        self.chatbot_window = open_chatbot(self.root, filename)
+
     # ================= STYLES =================
     def setup_styles(self):
         self.h1 = tkfont.Font(family="Arial", size=24, weight="bold")
@@ -74,6 +97,20 @@ class ModernAISec:
                  text="🛡️ AI-Sec Assistant",
                  font=self.h2,
                  bg=self.colors["bg"]).pack(side="left")
+        
+        ctk.CTkButton(
+            navbar,                              # ← changed from header_row to navbar
+            text=" Buy / Activate Subscription",
+            font=("Arial", 11, "bold"),
+            fg_color="#ECEDEE",        
+            hover_color="#E5E7EB",     
+            text_color="#374151", 
+            corner_radius=8,
+            height=36,
+            cursor="hand2",
+            command=self.open_subscription_dialog
+        ).pack(side="right")
+
 
         # HERO
         hero_border = tk.Frame(self.root,
@@ -205,7 +242,7 @@ class ModernAISec:
         self.right_canvas.bind("<Enter>", lambda e: self._bind_scroll(self.right_canvas))
         self.right_canvas.bind("<Leave>", lambda e: self._unbind_scroll())
 
-# ai_card creation stays the same...
+        # ai_card creation stays the same...
         ai_card = tk.Frame(self.right_scroll_frame,
                            bg=self.colors["card_bg"],
                            padx=25,
@@ -337,7 +374,14 @@ class ModernAISec:
                  fg="#6E6E73",
                 ).pack(anchor="w", padx=20, pady=(0, 10))
 
- # ================= RIGHT CARD (Security Tip) =================
+        # Find your left_card (Quarantine card) and add:
+        left_card.bind("<Button-1>", lambda e: open_quarantine_page(self.root))
+        left_card.configure(cursor="hand2")
+
+        # Also bind the alert_box and quarantine_label:
+        alert_box.bind("<Button-1>", lambda e: open_quarantine_page(self.root))
+
+        # ================= RIGHT CARD (Security Tip) =================
         right_card = tk.Frame(section, bg="#FFFFFF")
         right_card.grid(row=0, column=1, sticky="ew", padx=(0, 15))
         right_card.configure(highlightbackground="#EAEAEA", highlightthickness=1)
@@ -358,6 +402,7 @@ class ModernAISec:
             size=(42, 42)
         )
 
+        # Updated chatbot button with proper command
         chatbot_btn = ctk.CTkButton(
             inline_frame,
             image=chatbot_img,
@@ -366,10 +411,10 @@ class ModernAISec:
             hover_color="#FFFFFF",
             text_color="#373131",
             cursor="hand2",
-            command=lambda: open_chatbot(self.root)
+            command=self.open_chatbot_with_current_file  # Updated command
         )
         chatbot_btn.pack(side="right", padx=(0, 10))
-
+        
         # Tip box
         tip_box = ctk.CTkFrame(
             right_card,
@@ -401,9 +446,9 @@ class ModernAISec:
             nav_frame,
             text="◀ Back",
             font=("Arial", 11),
-            fg_color="#E0E0E0",
-            hover_color="#DFDFDF",
-            text_color="#9E9E9E",
+            fg_color="#ECEDEE",        # ← background color (light gray)
+            hover_color="#E5E7EB",     # ← hover background
+            text_color="#374151", 
             corner_radius=8,
             width=80,
             height=32,
@@ -424,9 +469,9 @@ class ModernAISec:
             nav_frame,
             text="Next ▶",
             font=("Arial", 11),
-            fg_color="#E0E0E0",
-            hover_color="#DFDFDF",
-            text_color="#9E9E9E",
+            fg_color="#ECEDEE",        # ← background color (light gray)
+            hover_color="#E5E7EB",     # ← hover background
+            text_color="#374151", 
             corner_radius=8,
             width=80,
             height=32,
@@ -445,7 +490,6 @@ class ModernAISec:
         self.tip_counter.configure(text=f"{self.tip_index + 1} of {len(self.tips)}")
 
     # ================= Block Recent Activity =================
-# 1. Added file_path to the argument list
     def create_activity_item(self, parent, time, title, status, is_danger, file_path):
 
         # ✅ Use STATUS_COLORS instead of is_danger
@@ -472,7 +516,7 @@ class ModernAISec:
 
         # Middle row container
         row = ctk.CTkFrame(item, fg_color="transparent")
-        row.pack(fill="x", padx=15, pady=(2, 0)) # Reduced bottom pady slightly
+        row.pack(fill="x", padx=15, pady=(2, 0))
 
         # Title
         title_label = ctk.CTkLabel(
@@ -482,18 +526,16 @@ class ModernAISec:
         )
         title_label.pack(side="left")
 
-        # --- NEW: File Path Label ---
-        # Placed right under the title inside the main 'item' box
+        # File Path Label
         path_label = ctk.CTkLabel(
             item,
             text=file_path,
             font=("Arial", 11),
             text_color="#0E0E0F",
-            wraplength=300,  # Prevents long paths from pushing the badge away
+            wraplength=300,
             justify="left"
         )
         path_label.pack(anchor="w", padx=15, pady=(0, 5))
-        # ----------------------------
 
         # Badge
         badge = ctk.CTkFrame(
@@ -514,8 +556,7 @@ class ModernAISec:
 
         on_click = lambda e, t=title, p=file_path, s=status: self.update_right_panel(t, p, s)
 
-        # In CustomTkinter, we must bind to the internal tkinter object (.bind)
-        # and sometimes the child widgets need explicit binding.
+        # Bind click events
         widgets_to_bind = [item, title_label, path_label, row, time_label]
         
         for widget in widgets_to_bind:
@@ -564,13 +605,18 @@ class ModernAISec:
 
     def _unbind_scroll(self):
         self.root.unbind_all("<MouseWheel>")
+        
+    def open_subscription_dialog(self):
+        import subprocess
+        import sys
+        subprocess.Popen([sys.executable, "myaccount.py"])
 
     # ================= QUARANTINE ALERT =================
     def update_quarantine(self, filename="Unknown File"):
         self.quarantine_count += 1
         self.quarantine_label.configure(text=str(self.quarantine_count))
 
-        # Flash effect (use configure, not config)
+        # Flash effect
         self.quarantine_label.configure(text_color="#FF0000")
         self.root.after(500, lambda: self.quarantine_label.configure(text_color="#D32F2F"))
 

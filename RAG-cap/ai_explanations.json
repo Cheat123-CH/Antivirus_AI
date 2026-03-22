@@ -1,0 +1,46 @@
+[
+  {
+    "alert_id": "A001",
+    "file_name": "updater.ps1",
+    "threat_name": "PowerShell.Obfuscated",
+    "severity": "High",
+    "detection_layer": "Rule-Based (Layer 2)",
+    "status": "Quarantined",
+    "time": "2025-03-14 08:12",
+    "ai_explanation": {
+      "what_happened": "A disguised program ran hidden instructions on your computer without you knowing, trying to take control of it from the inside. It was working in secret to let an attacker access your files and data.",
+      "why": "Attackers want permanent access to your computer so they can steal files, spy on you, or use your computer to attack others.",
+      "analogy": "It is a bit like a burglar who does not steal anything on the first visit — they just make a copy of your house key so they can come back whenever they want, without you ever knowing.",
+      "what_to_do": [
+        "✅ Do NOT try to open or recover the blocked file.",
+        "🔒 Change your important passwords from a different device.",
+        "🔄 Check your computer for problems using AI-Sec.",
+        "📞 Contact your IT support if you think you opened this file.",
+        "🗑 Let AI-Sec permanently delete this file when prompted."
+      ]
+    },
+    "saved_at": "2026-03-19 21:39:22"
+  },
+  {
+    "alert_id": "A004",
+    "file_name": "encrypt_all.bat",
+    "threat_name": "Ransomware.WannaCry",
+    "severity": "High",
+    "detection_layer": "ML Model (Layer 3)",
+    "status": "Quarantined",
+    "time": "2025-03-14 11:30",
+    "ai_explanation": {
+      "what_happened": "A very dangerous program started locking all your personal files — your photos, documents, and videos — so you could no longer open them. It was also trying to erase your backup copies so you would have no way to get your files back without paying money.",
+      "why": "Attackers lock your files so they can demand money — sometimes hundreds or thousands of dollars — to unlock them again.",
+      "analogy": "It is a bit like someone breaking into your home, putting all your belongings into locked boxes, and sliding a note under the door asking for money to return them.",
+      "what_to_do": [
+        "✅ Do NOT try to open or recover the blocked file.",
+        "🔒 Change your important passwords from a different device.",
+        "🔄 Check your computer for problems using AI-Sec.",
+        "📞 Contact your IT support if you think you opened this file.",
+        "🗑 Let AI-Sec permanently delete this file when prompted."
+      ]
+    },
+    "saved_at": "2026-03-19 21:39:16"
+  }
+]
